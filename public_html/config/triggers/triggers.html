@@ -1,0 +1,44 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			ZACHARY CARTER
+	Application Name:	FARA
+	Directory:			FARA/CONFIG/TRIGGERS
+	File Name:			triggers.html
+=============================================================-->
+
+<div id="included-files">
+<!-- PAGE STYLES -->
+<link href="../config/triggers/css/triggers.css" rel="stylesheet"/>
+
+<!-- PAGE SCRIPTS -->
+<script type="text/javascript" src="../config/triggers/js/triggers.js"></script>
+<script type="text/javascript" src="../config/triggers/js/purgeTriggers.js"></script>
+<script type="text/javascript" src="../config/triggers/js/existingTriggers.js"></script>
+</div>
+
+
+<div id="content_container">
+	<div class="row" style="height:calc(100% - 20px)">
+		<div class="col s12 m10 l8 offset-m1 offset-l2" style="height:100%">
+			<div class="card-panel grey darken-4 hoverable white-text"  style="font-size: 1.3rem" style="height:calc(100% - 20px); min-height:640px;">
+				<div class="row">
+					<div class="col s12">
+						<ul class="tabs grey darken-4">
+							<li class="tab col s3"><a class="white-text" onclick="loadAddNewTrigger()">New Trigger</a></li>
+							<li class="tab col s3"><a class="white-text" onclick="loadExistingTriggers()">Manage Triggers</a></li>
+							<li class="tab col s3"><a class="white-text" onclick="loadRemoveAllTriggers()">Purge Triggers</a></li>
+							<li class="tab col s3"><a class="white-text" onclick="removeSingleTrigger()">Remove Trigger</a></li>
+						</ul>
+					</div>
+				</div>
+				<br>
+				<div id="content"></div>
+			</div>
+	    </div>
+	</div>
+  <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 34px;">
+    <a class="btn-floating btn-large red" onclick="LoadBottomSheet()">
+      <i class="large material-icons">grid_on</i>
+    </a>
+  </div>
+</div>

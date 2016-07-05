@@ -1,0 +1,112 @@
+/*============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			JORGE MURILLO
+	Application Name:	FARA
+	Directory:			FARA/CONFIG/SEQUENCES/CSS
+	File Name:			style.css
+=============================================================*/
+
+#content_container input[type=text]:focus:not([readonly]), #content_container input[type=password]:focus:not([readonly]), #content_container input[type=email]:focus:not([readonly]), #content_container input[type=url]:focus:not([readonly]), #content_container input[type=time]:focus:not([readonly]), #content_container input[type=date]:focus:not([readonly]), #content_container input[type=datetime-local]:focus:not([readonly]), #content_container input[type=tel]:focus:not([readonly]), #content_container input[type=number]:focus:not([readonly]), #content_container input[type=search]:focus:not([readonly]), #content_container textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #ef6c00;
+    box-shadow: 0 1px 0 0 #ef6c00; 
+}
+
+#content_container input[type=text]:focus:not([readonly]) + label, #content_container input[type=password]:focus:not([readonly]) + label, #content_container input[type=email]:focus:not([readonly]) + label, #content_container input[type=url]:focus:not([readonly]) + label, #content_container input[type=time]:focus:not([readonly]) + label, #content_container input[type=date]:focus:not([readonly]) + label, #content_container input[type=datetime-local]:focus:not([readonly]) + label, #content_container input[type=tel]:focus:not([readonly]) + label, #content_container input[type=number]:focus:not([readonly]) + label, #content_container input[type=search]:focus:not([readonly]) + label, #content_container textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: #ef6c00;
+}
+
+#content_container .collection-box {
+	height: 500px;
+	overflow-y: visible;
+}
+
+#content_container #page_title {
+	margin-top: 40px;
+}
+
+#content_container h1, #content_container h2 {
+	margin-left: calc(2% + 50px);
+}
+
+#content_container .table_container {
+	display: block;
+	width: 100%;
+}
+
+#content_container .bg-editblue {
+	background-color: #D5E4E8 !important;
+}
+
+#content_container .btn-filter{
+	position: absolute;
+	left: 215px;
+	top: 0px;
+}
+
+.jqxgrid-fontsize
+{
+  margin: 6px; 
+  margin-right: 10px; 
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .col-sm-15 {
+    width: 20%;
+    float: left;
+  }
+  .dashnums{
+    font-size: 45px;
+  }
+  .jqxgrid-fontsize
+  {
+    font-size: 17px;
+  }
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-15 {
+    width: 20%;
+    float: left;
+  }
+  .dashnums{
+    font-size: 55px;
+	}
+}
+@media (min-width: 1250px) {
+  .jqxgrid-fontsize
+  {
+    font-size: 14px;
+  }
+}
+@media (min-width: 2500px) {
+	body{
+		font-size: 16px;
+	}
+}
+@media (min-width: 3500px) {
+	body{
+		font-size: 30px;
+	}
+	.jqx-chart-title-text{
+		font-size: 19px;
+	}
+	.jqx-widget{
+		font-size: 25px;
+	}
+	.dashnums{
+		font-size: 60px;
+	}
+	.dashdates{
+		font-size: 30px;
+	}
+	.title-tables{
+		font-size: 20px;
+	}
+}

@@ -1,0 +1,163 @@
+<div id="file_include_container"></div>
+
+<script>
+	function loadjscssfile(filename, filetype) {
+		if(filetype == "js") {
+			var fileref = document.createElement('script');
+			fileref.setAttribute("type","text/javascript");
+			fileref.setAttribute("src", filename);
+		}
+		else if(filetype == "css") {
+			var fileref = document.createElement("link")
+			fileref.setAttribute("rel", "stylesheet")
+			fileref.setAttribute("type", "text/css")
+			fileref.setAttribute("href", filename)
+		}
+		if(typeof fileref != "undefined") {
+			document.getElementById("file_include_container").appendChild(fileref);
+		}
+	}
+	
+	if(typeof UserData !== 'undefined') {
+		loadjscssfile("../forms/sfty_cont/css/forms.css", "css");
+		loadjscssfile("../forms/sfty_cont/css/ui-lightness/jquery-ui-1.10.4.custom.css", "css");
+		loadjscssfile("../forms/sfty_cont/css/multiselect.css", "css");
+		loadjscssfile("../forms/sfty_cont/css/jqueryui.css", "css");
+		loadjscssfile("../forms/sfty_cont/css/altTheme.css", "css");
+		loadjscssfile("../forms/sfty_cont/js/declarations.js", "js");
+		loadjscssfile("../forms/sfty_cont/js/jquery-ui-1.10.4.custom.js", "js");
+		loadjscssfile("../forms/sfty_cont/js/multiselect.js", "js");
+		loadjscssfile("../forms/sfty_cont/js/utilities.js", "js");
+	}
+	else {		
+		loadjscssfile("./css/forms.css", "css");
+		loadjscssfile("./css/ui-lightness/jquery-ui-1.10.4.custom.css", "css");
+		loadjscssfile("./css/multiselect.css", "css");
+		loadjscssfile("./css/jqueryui.css", "css");
+		loadjscssfile("./css/altTheme.css", "css");
+		loadjscssfile("../../required_files/scripts/jquery-2.0.2.min.js", "js");
+		loadjscssfile("../js/extract_inject.js", "js");
+		loadjscssfile("./js/jquery-ui-1.10.4.custom.js", "js");
+		loadjscssfile("./js/multiselect.js", "js");
+		loadjscssfile("./js/utilities.js", "js");
+	}
+</script>
+
+<div id="content_container">
+	<div class="table_container">
+		<div id="form_container">							
+			<div id="blockA">
+				<h1>SAFETY CONTACT</h1>
+				<h3>(To be asked by Supervisor)</h3>
+			</div>
+			
+			<hr>
+			
+			<div id="blockB">
+				<div><span>Y</span><span>N</span></div>
+				<div>
+					<input class="cbY" type="radio" id="sfty1_1" name="sfty1" value="YES" uniqueRadioId="InspectForHazardY" databaseColumn="InspectForHazard" elementType="radiogroup">
+					<input class="cbN" type="radio" id="sfty1_2" name="sfty1" value="NO" uniqueRadioId="InspectForHazardN" databaseColumn="InspectForHazard" elementType="radiogroup">
+					<label>Did employee inspect work area for hazards?</label>
+				</div>
+				<div>
+					<input class="cbY" type="radio" id="sfty2_1" name="sfty2" value="YES" uniqueRadioId="InspectedBeforeUseY" databaseColumn="InspectedBeforeUse" elementType="radiogroup">
+					<input class="cbN" type="radio" id="sfty2_2" name="sfty2" value="NO" uniqueRadioId="InspectedBeforeUseN" databaseColumn="InspectedBeforeUse" elementType="radiogroup">
+					<label>If employee is operating mobile equipment, was it inspected before use?</label>
+				</div>
+				<div>
+					<input class="cbY" type="radio" id="sfty3_1" name="sfty3" value="YES" uniqueRadioId="EquipmentWorkingY" databaseColumn="EquipmentWorking" elementType="radiogroup">
+					<input class="cbN" type="radio" id="sfty3_2" name="sfty3" value="NO" uniqueRadioId="EquipmentWorkingN" databaseColumn="EquipmentWorking" elementType="radiogroup">
+					<label>Are equipment and working areas in good order?</label>
+				</div>
+				<div>
+					<input class="cbY" type="radio" id="sfty4_1" name="sfty4" value="YES" uniqueRadioId="UnderstoodY" databaseColumn="Understood" elementType="radiogroup">
+					<input class="cbN" type="radio" id="sfty4_2" name="sfty4" value="NO" uniqueRadioId="UnderstoodN" databaseColumn="Understood" elementType="radiogroup">
+					<label>Is work assignment understood?</label>
+				</div>
+				<div>
+					<input class="cbY" type="radio" id="sfty5_1" name="sfty5" value="YES" uniqueRadioId="WorkingProperlyY" databaseColumn="WorkingProperly" elementType="radiogroup">
+					<input class="cbN" type="radio" id="sfty5_2" name="sfty5" value="NO" uniqueRadioId="WorkingProperlyN" databaseColumn="WorkingProperly" elementType="radiogroup">
+					<label>Is employee working properly and can he/she continue to do so?</label>
+				</div>
+			</div>
+			
+			<br>
+			<hr>
+			<br>
+			
+			<div id="blockC">
+				<select multiple id="topics_select" value="Topics Discussed:" class="hazardSelect">
+					<option id="td1" rowIndex="1">Accident Share</option>
+					<option id="td2" rowIndex="1">Be Alert</option>
+					<option id="td3" rowIndex="1">Material Handling / Lifting</option>
+					<option id="td4" rowIndex="1">Electrical Hazards</option>
+					<option id="td5" rowIndex="1">Fall Protection</option>
+					<option id="td6" rowIndex="1">Fire Protection / Prevention</option>
+					<option id="td7" rowIndex="1">Hazard Recognition</option>
+					<option id="td8" rowIndex="1">Hazard Substances</option>
+					<option id="td9" rowIndex="1">Health / Hygiene</option>
+					<option id="td10" rowIndex="1">Hearing Conservation</option>
+					<option id="td11" rowIndex="1">Housekeeping</option>
+					<option id="td12" rowIndex="1">Lifting Gear</option>
+					<option id="td13" rowIndex="1">Lock-out / Tag-out / Try-out</option>
+					<option id="td14" rowIndex="1">Machine Guarding</option>
+					<option id="td15" rowIndex="1">Communication</option>
+					<option id="td16" rowIndex="1">Mobile Equipment</option>
+					<option id="td17" rowIndex="1">PPE Usage</option>
+					<option id="td18" rowIndex="1">Safety Rules</option>
+					<option id="td19" rowIndex="1">Shift Work</option>
+					<option id="td20" rowIndex="1">Slips / Trips / Falls</option>
+					<option id="td21" rowIndex="1">Stacking and Storage</option>
+					<option id="td22" rowIndex="1">Task Training</option>
+					<option id="td23" rowIndex="1">Weather</option>
+					<option id="td24" rowIndex="1">Working Alone</option>
+				</select>
+				<input id="other_option" style="height:40px;" type="text" databaseColumn="Other" elementType="textbox" placeholder="Other (specify)" name="OtherTopics"></input>
+			</div>
+											
+			<br>
+			<hr>
+			<br>
+
+			<div id="blockD">
+				<textarea placeholder="Employee concerns, recommendations, etc.:" id="EmployeeConcerns" name="EmployeeConcerns" databaseColumn="EmployeeConcerns" elementType="textarea"></textarea>
+			</div>
+			
+			<div id="blockE">
+				<textarea placeholder="Follow up actions: (who, what, when?)" id="FollowUp" name="FollowUp" databaseColumn="FollowUp" elementType="textarea"></textarea>
+			</div>
+			
+			<br>
+			
+			<div id="blockF">
+				<div>
+					<div>
+						<span>Supervisor:</span>
+						<input type="text" id="spvsr" name="SuperVisor" elementType="textbox" databaseColumn="Supervisor">
+					</div>
+					<div id="time_div">						
+						<span id="time_label" >Time:</span>
+						<input type="time" id="spvsr_time" name="Time" databaseColumn="TimeRecorded" elementType="textbox">
+					</div>
+				</div>
+			</div>
+			
+			<div id="blockG">
+				<textarea placeholder="Comments:" id="comments" name="Comments" elementType="textarea" databaseColumn="Comments"></textarea>
+			</div>
+
+			<div id="signature_container"></div>
+
+			<div id="picture_container"></div>
+			
+			<br>
+
+			<div id="button_container">
+				<!--<input id="reset_button" type="button" value="Reset"></button>
+				<input id="save_button" type="submit" value="Save"></button>
+				<input id="submit_button" type="submit" value="Submit"></button>-->
+			</div>			
+		</div>	
+	</div>
+</div>

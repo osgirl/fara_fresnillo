@@ -1,0 +1,303 @@
+
+/*======================================================
+				      GENERAL STYLES
+========================================================*/
+
+#form_container {
+	background: #fff;
+	width: 96%;
+	margin: auto;
+	padding: 20px;
+	-moz-box-shadow:  2px 5px 12px #888;
+	-webkit-box-shadow:  2px 5px 12px #888;
+	box-shadow: 2px 5px 12px #888; 
+}
+
+input[type="text"], input[type="datetime-local"], select {
+	height: 30px;
+}
+
+input[type="text"], input[type="datetime-local"], textarea, select {
+	padding: 0 2px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background: #f6f6f6;
+}
+
+input[type="button"], input[type="submit"] {
+	color: #fff;
+	background: #5084be;
+	font-size: 18px;
+	padding: 8px;
+	border: 2px solid #366191;
+	border-radius: 4px;
+	-moz-box-shadow:  0 -4px 0 rgba(255,255,255,0.1) inset;
+	-webkit-box-shadow:  0 -4px 0 rgba(255,255,255,0.1) inset;
+	box-shadow: 0 -4px 0 rgba(255,255,255,0.1) inset;
+}
+
+.smallbtn {
+	border: 1px solid #366191 !important;
+	-moz-box-shadow:  0 -2px 0 rgba(255,255,255,0.1) inset !important;
+	-webkit-box-shadow:  0 -2px 0 rgba(255,255,255,0.1) inset !important;
+	box-shadow: 0 -2px 0 rgba(255,255,255,0.1) inset !important;
+	font-size: 14px !important;
+	padding: 3px 6px !important;
+	margin-top: 2px !important;
+	margin-right: 2px !important;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover {
+	cursor: pointer;
+	background: #70a4de;
+}
+
+textarea {
+	width: 100%;
+	max-width: 100%;
+	height: 100px;
+}
+
+/*======================================================
+				      BLOCK A
+========================================================*/
+
+
+
+/*========================================================*/
+
+
+
+/*======================================================
+				      BLOCK B
+========================================================*/
+
+#blockB div {
+	display: block;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+#blockB input[type="text"] {
+	width: 50%;
+}
+
+#facilitator_text {
+	margin-left: 61px;
+	margin-right: 20px;
+}
+
+#subject_text {
+	margin-right: 20px;
+}
+
+#work_text {
+	margin-left: 4px;
+	margin-right: 20px;
+}
+
+#shift_select {
+	margin-left: 9px;
+	width: 18%;
+}
+
+#date_box {
+	width: 18%;
+}
+
+
+/*========================================================*/
+
+
+
+/*======================================================
+				      BLOCK C
+========================================================*/
+
+#blockC, #blockC div {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+#blockC div div {
+	display: inline-block;
+	width: 49%;
+}
+
+
+
+/*========================================================*/
+
+.cbBlock {
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
+}
+
+/*======================================================
+				      BLOCK D
+========================================================*/
+
+#blockD div div {
+	display: block;
+}
+
+#blockD input[type="checkbox"] {
+	vertical-align: middle;
+	float: right;
+	clear: both;
+	margin-right: 80px;
+	margin-top: 6px;
+	height: auto;
+}
+
+.darkBox {
+	background: #eee;
+}
+
+.lightBox {
+	background: #f6f6f6;
+}
+
+/*========================================================*/
+
+
+
+/*======================================================
+				      BLOCK E
+========================================================*/
+
+#blockE div div {
+	display: block;
+}
+
+#blockE input[type="checkbox"] {
+	vertical-align: middle;
+	float: right;
+	clear: both;
+	margin-right: 80px;
+	margin-top: 6px;
+	height: auto;
+}
+
+/*========================================================*/
+
+
+
+/*======================================================
+				      BLOCK F
+========================================================*/
+
+
+
+/*========================================================*/
+
+
+
+/*======================================================
+				      BLOCK G
+========================================================*/
+
+#blockG div {
+	display: inline-block;
+	width: 49%;
+}
+
+#blockG label, #blockG input {
+	display: block;
+	width: 80%;
+}
+
+#blockG label {
+	margin-left: 90px;
+}
+
+#blockG input {
+	margin-left: 50px;
+	margin-top: 15px;
+	background: none;
+	border: none;
+	border-bottom: 1px solid black;
+	border-radius: 0;
+}
+
+
+/*========================================================*/
+
+
+
+
+/*======================================================
+				      FORM SECTION: FOOTER
+========================================================*/
+
+#submit_button {
+	margin-left: calc(50% - 68px);
+	margin-left: -webkit-calc(50% - 68px);
+	margin-left: -moz-calc(50% - 68px);
+}
+
+/*========================================================*/
+
+
+
+
+/*======================================================
+				      MEDIA QUERIES
+========================================================*/
+
+@media (max-width: 830px) {
+	.slideout-menu, #navigation {
+		display: none;
+	}
+	
+	#form_shell {
+		width: 100%;
+	}
+	
+	#form_container {
+		width: 96%;
+	}
+	
+	#blockB label, #blockB input, #blockB select {
+		display: block !important;
+		width: 100% !important;
+		margin-left: 0 !important;
+	}
+	
+	#blockB label {
+		margin-top: 5px;
+	}
+	
+	#blockC div div {
+		display: block !important;
+		width: 100% !important;
+	}
+	
+	.cbBlock {
+		display: block !important;
+		width: 100% !important;
+	}
+	
+	#blockG div {
+		display: block !important;
+		width: 100% !important;
+	}
+	
+	#blockG label {
+		margin: auto !important;
+	}
+	
+	#blockG input {
+		margin-left:  auto !important;
+		margin-right:  auto !important;
+		margin-top: 20px !important;
+	}
+}
+
+@media (max-width: 599px) {
+	.cbwe {
+		margin-right: 10px !important;
+	}
+}

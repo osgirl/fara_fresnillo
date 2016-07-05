@@ -1,0 +1,103 @@
+/*============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			AARON MCCOLOUGH
+	Application Name:	FARA
+	Directory:			FARA/FORMS/CSS
+	File Name:			main.css
+=============================================================*/
+
+#form_container {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	padding:10px;
+}
+
+#form_container i.normal {
+	font-size: 3.5rem;
+}
+
+#form_container .initialsCont {
+	height: 40px;
+	padding: 0px;
+	padding: 2px 2px;
+}
+
+#form_container .initialsCont div {
+	width: 100%;
+	height: 100%;
+	color: #a1a1a1;
+	font-size: 14px;
+	text-align: center;
+	line-height: 39px;
+	background: url("../images/initials_icon.png") no-repeat center;
+	background-size: contain;
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+#form_container .signatureBox {
+	display: block;
+	width: 100%;
+	height: 80px;
+	text-align: center;
+	line-height: 82px;
+	border: 1px dashed #919191;
+	color: #a1a1a1;
+	font-size: 16px;
+	background-size: 250px 55px;
+}
+
+#form_container [type="radio"]+label:before, #form_container [type="radio"]+label:after {	
+	width: 30px;
+	height: 30px;
+	margin: 0px;
+}
+
+#form_container [type="radio"].with-gap:checked+label:before {
+	border-color: #ff9800;
+}
+
+#form_container [type="radio"].with-gap:checked+label:after {
+	border-color:#ff9800;
+	background-color:#ff9800;
+}
+
+#form_container [type="radio"]:not(:checked)+label, #form_container [type="radio"]:checked+label {
+	height: 30px;
+	line-height: 30px;
+	font-size: 1.4rem;
+}
+
+#form_container .icon-hidden {
+	display: none;
+}
+
+#form_container .icon-visible {
+	display: block;
+}
+
+#form_container .add-icon {
+	background: #66bb6a;
+	color: #fff;
+	font-size: 3.0rem;
+	border-radius: 50%;
+	width: 47px;
+	height: 47px;
+	line-height: 47px;
+	padding-left: 11px;
+}
+
+#form_container .remove-icon {
+	background: #EF5350;
+	color: #fff;
+	font-size: 3.0rem;
+	border-radius: 50%;
+	width: 47px;
+	height: 47px;
+	line-height: 15px;
+	padding-left: 13px;
+}
+
+
+
+

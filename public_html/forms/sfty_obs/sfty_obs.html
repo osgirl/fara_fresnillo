@@ -1,0 +1,310 @@
+<div id="file_include_container"></div>
+
+<script>
+	function loadjscssfile(filename, filetype) {
+		if(filetype == "js") {
+			var fileref = document.createElement('script');
+			fileref.setAttribute("type","text/javascript");
+			fileref.setAttribute("src", filename);
+		}
+		else if(filetype == "css") {
+			var fileref = document.createElement("link")
+			fileref.setAttribute("rel", "stylesheet")
+			fileref.setAttribute("type", "text/css")
+			fileref.setAttribute("href", filename)
+		}
+		if(typeof fileref != "undefined") {
+			document.getElementById("file_include_container").appendChild(fileref);
+		}
+	}
+	
+	if(typeof UserData !== 'undefined') {
+		loadjscssfile("../forms/sfty_obs/css/altTheme.css", "css");
+		loadjscssfile("../forms/sfty_obs/css/forms.css", "css");
+		loadjscssfile("../forms/sfty_obs/js/declarations.js", "js");
+		loadjscssfile("../forms/sfty_obs/js/utilities.js", "js");
+	}
+	else {		
+		loadjscssfile("./css/altTheme.css", "css");
+		loadjscssfile("./css/forms.css", "css");
+		loadjscssfile("../../required_files/scripts/jquery-2.0.2.min.js", "js");
+		loadjscssfile("../js/extract_inject.js", "js");
+		loadjscssfile("./js/declarations.js", "js");
+		loadjscssfile("./js/utilities.js", "js");
+	}
+</script>
+
+<div id="content_container">						
+	<div class="table_container">
+		<div id="form_container">
+			<div id="blockA">
+				<h1>SAFETY OBSERVATION</h1>
+				<p>Observe employee(s) for several minutes.  Note the type of work they are performing.  Check the boxes that apply.  Rate each checked box as to 'safe' or 'at risk' behaviours.  Stop or correct any unsafe acts or conditions that could cause injury or harm to the employee or the equipment.</p>
+			</div>
+
+			<div id="blockB">
+				<table>
+					<tr>
+						<td>
+							<label for="CompletedByName">Observer:</label>
+						</td>
+						<td>
+							<input type="text" id="CompletedByName" name="CompletedByName" databaseColumn="CompletedByName" elementType="textbox">
+						</td>
+					</tr>
+					<tr>					
+						<td>
+							<label for="date">Date:</label>
+						</td>
+						<td>
+							<input type="date" id="Shiftdate" name="Shiftdate" databaseColumn="ShiftDate" elementType="date">
+						</td>
+					<tr>
+					<tr>
+						<td>
+							<label for="ShiftType">Shift Type:</label>
+						</td>
+						<td>
+							<select id="ShiftType" name="ShiftType" databaseColumn="ShiftType" elementType="select">
+								<option>-- Choose --</option>
+								<option>Day</option>
+								<option>Owl</option>
+								<option>Eve</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div id="blockC">
+				<div class="blockHeader">Type of Work Observed:</div>
+				<textarea id="TasksObserved" name="TasksObserved" databaseColumn="TasksObserved" elementType="textarea"></textarea>
+			</div>
+
+			<div id="blockD">
+				<table class="blockHeader">
+					<tr>
+						<td>Personal Protective Equipment:</td>
+						<td>At Risk</td>
+						<td>Safe</td>
+					</tr>
+				</table>
+				<div id="dGroupCont" class="inputGroup">
+					<table>
+						<tr>
+							<td class="tdLabel"><label>Eye & Face Protection</label></td>
+							<td><input class="atriskBox" type="radio" name="d1" id="Eyes_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="Eyes_AtRisk" databaseColumn="Eyes_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="d1" id="Eyes_SafeYes" value="Safe" uniqueRadioId="Eyes_Safe" databaseColumn="Eyes_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>
+							<td class="tdLabel"><label>Hand Protection</label></td>
+							<td><input class="atriskBox" type="radio" name="d2" id="Hands_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="Hands_AtRisk" databaseColumn="Hands_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="d2" id="Hands_SafeYes" value="Safe" uniqueRadioId="Hands_Safe" databaseColumn="Hands_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Lanyard/Safety Harness</label></td>
+							<td><input class="atriskBox" type="radio" name="d3" id="LanyardSafety_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="LanyardSafety_AtRisk" databaseColumn="LanyardSafety_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="d3" id="LanyardSafety_SafeYes" value="Safe" uniqueRadioId="LanyardSafety_Safe" databaseColumn="LanyardSafety_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Hearing Protection</label></td>
+							<td><input class="atriskBox" type="radio" name="d4" id="HearingProtection_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="HearingProtection_AtRisk" databaseColumn="HearingProtection_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="d4" id="HearingProtection_SafeYes" value="Safe" uniqueRadioId="HearingProtection_Safe" databaseColumn="HearingProtection_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Respirators</label></td>
+							<td><input class="atriskBox" type="radio" name="d5" id="Respirators_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="Respirators_AtRisk" databaseColumn="Respirators_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="d5" id="Respirators_SafeYes" value="Safe" uniqueRadioId="Respirators_Safe" databaseColumn="Respirators_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Head Protection</label></td>
+							<td><input class="atriskBox" type="radio" name="d6" id="HeadProtection_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="HeadProtection_AtRisk" databaseColumn="HeadProtection_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="d6" id="HeadProtection_SafeYes" value="Safe" uniqueRadioId="HeadProtection_Safe" databaseColumn="HeadProtection_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Protective Footwear</label></td>
+							<td><input class="atriskBox" type="radio" name="d7" id="ProtectiveFootwear_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="ProtectiveFootwear_AtRisk" databaseColumn="ProtectiveFootwear_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="d7" id="ProtectiveFootwear_SafeYes" value="Safe" uniqueRadioId="ProtectiveFootwear_Safe" databaseColumn="ProtectiveFootwear_Safe" elementType="radiogroup"></td>
+						</tr>					
+					</table>
+				</div>									
+			</div>
+
+			<div id="blockE">
+				<table class="blockHeader">
+					<tr>
+						<td>Tools & Equipment:</td>
+						<td>At Risk</td>
+						<td>Safe</td>
+					</tr>
+				</table>
+				<div id="eGroupCont" class="inputGroup">
+					<table>
+						<tr>
+							<td class="tdLabel"><label>Condition of Tools/Equipment</label></td>
+							<td><input class="atriskBox" type="radio" name="e1" id="ConditionOfTools_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="ConditionOfTools_AtRisk" databaseColumn="ConditionOfTools_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="e1" id="ConditionOfTools_SafeYes" value="Safe" uniqueRadioId="ConditionOfTools_Safe" databaseColumn="ConditionOfTools_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>
+							<td class="tdLabel"><label>Proper Tools/equipment For the Job</label></td>
+							<td><input class="atriskBox" type="radio" name="e2" id="ProperTools_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="ProperTools_AtRisk" databaseColumn="ProperTools_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="e2" id="ProperTools_SafeYes" value="Safe" uniqueRadioId="ProperTools_Safe" databaseColumn="ProperTools_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Lanyard/Safety Harness</label></td>
+							<td><input class="atriskBox" type="radio" name="e3" id="Lanyard_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="Lanyard_AtRisk" databaseColumn="Lanyard_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="e3" id="Lanyard_SafeYes" value="Safe" uniqueRadioId="Lanyard_Safe" databaseColumn="Lanyard_Safe" elementType="radiogroup"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div id="blockF">
+				<table class="blockHeader">
+					<tr>
+						<td>Potential Contact:</td>
+						<td>At Risk</td>
+						<td>Safe</td>
+					</tr>
+				</table>
+				<div id="fGroupCont" class="inputGroup">
+					<table>
+						<tr>
+							<td class="tdLabel"><label>Struck Against</label></td>
+							<td><input class="atriskBox" type="radio" name="f1" id="StruckAgainst_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="StruckAgainst_AtRisk" databaseColumn="StruckAgainst_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="f1" id="StruckAgainst_SafeYes" value="Safe" uniqueRadioId="StruckAgainst_Safe" databaseColumn="StruckAgainst_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>
+							<td class="tdLabel"><label>Struck By</label></td>
+							<td><input class="atriskBox" type="radio" name="f2" id="StruckBy_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="StruckBy_AtRisk" databaseColumn="StruckBy_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="f2" id="StruckBy_SafeYes" value="Safe" uniqueRadioId="StruckBy_Safe" databaseColumn="StruckBy_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Caught In</label></td>
+							<td><input class="atriskBox" type="radio" name="f3" id="CaughtIn_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="CaughtIn_AtRisk" databaseColumn="CaughtIn_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="f3" id="CaughtIn_SafeYes" value="Safe" uniqueRadioId="CaughtIn_Safe" databaseColumn="CaughtIn_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Caught On</label></td>
+							<td><input class="atriskBox" type="radio" name="f4" id="CaughtOn_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="CaughtOn_AtRisk" databaseColumn="CaughtOn_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="f4" id="CaughtOn_SafeYes" value="Safe" uniqueRadioId="CaughtOn_Safe" databaseColumn="CaughtOn_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Caught Between</label></td>
+							<td><input class="atriskBox" type="radio" name="f5" id="CaughtBetween_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="CaughtBetween_AtRisk" databaseColumn="CaughtBetween_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="f5" id="CaughtBetween_SafeYes" value="Safe" uniqueRadioId="CaughtBetween_Safe" databaseColumn="CaughtBetween_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Slip</label></td>
+							<td><input class="atriskBox" type="radio" name="f6" id="Slip_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="Slip_AtRisk" databaseColumn="Slip_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="f6" id="Slip_SafeYes" value="Safe" uniqueRadioId="Slip_Safe" databaseColumn="Slip_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Fall From Same Level</label></td>
+							<td><input class="atriskBox" type="radio" name="f7" id="FallFromSameLevel_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="FallFromSameLevel_AtRisk" databaseColumn="FallFromSameLevel_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="f7" id="FallFromSameLevel_SafeYes" value="Safe" uniqueRadioId="FallFromSameLevel_Safe" databaseColumn="FallFromSameLevel_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Fall To Lower level</label></td>
+							<td><input class="atriskBox" type="radio" name="f8" id="FallToLowerLevel_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="FallToLowerLevel_AtRisk" databaseColumn="FallToLowerLevel_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="f8" id="FallToLowerLevel_SafeYes" value="Safe" uniqueRadioId="FallToLowerLevel_Safe" databaseColumn="FallToLowerLevel_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Caustics / Acid</label></td>
+							<td><input class="atriskBox" type="radio" name="f9" id="Caustics_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="Caustics_AtRisk" databaseColumn="Caustics_At" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="f9" id="Caustics_SafeYes" value="Safe" uniqueRadioId="Caustics_Safe" databaseColumn="Caustics_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Toxic / Nontoxic Substance</label></td>
+							<td><input class="atriskBox" type="radio" name="f10" id="Toxic_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="Toxic_AtRisk" databaseColumn="Toxic_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="f10" id="Toxic_SafeYes" value="Safe" uniqueRadioId="Toxic_Safe" databaseColumn="Toxic_Safe" elementType="radiogroup"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div id="blockG">
+				<table class="blockHeader">
+					<tr>
+						<td>Procedures & Orderliness:</td>
+						<td>At Risk</td>
+						<td>Safe</td>
+					</tr>
+				</table>
+				<div id="gGroupCont" class="inputGroup">
+					<table>
+						<tr>
+							<td class="tdLabel"><label>Pre-Shift Inspection of Work Area</label></td>
+							<td><input class="atriskBox" type="radio" name="g1" id="PreShift_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="PreShift_AtRisk" databaseColumn="PreShift_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="g1" id="PreShift_SafeYes" value="Safe" uniqueRadioId="PreShift_Safe" databaseColumn="PreShift_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>
+							<td class="tdLabel"><label>Inspection of Mobile Equipment</label></td>
+							<td><input class="atriskBox" type="radio" name="g2" id="InspectionOfEquip_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="InspectionOfEquip_AtRisk" databaseColumn="InspectionOfEquip_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="g2" id="InspectionOfEquip_SafeYes" value="Safe" uniqueRadioId="InspectionOfEquip_Safe" databaseColumn="InspectionOfEquip_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Lock-Out/Tag-Out</label></td>
+							<td><input class="atriskBox" type="radio" name="g3" id="LockOut_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="LockOut_AtRisk" databaseColumn="LockOut_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="g3" id="LockOut_SafeYes" value="Safe" uniqueRadioId="LockOut_Safe" databaseColumn="LockOut_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Fall Protection</label></td>
+							<td><input class="atriskBox" type="radio" name="g4" id="FallProtection_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="FallProtection_AtRisk" databaseColumn="FallProtection_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="g4" id="FallProtection_SafeYes" value="Safe" uniqueRadioId="FallProtection_Safe" databaseColumn="FallProtection_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Ladders/Scaffolding</label></td>
+							<td><input class="atriskBox" type="radio" name="g5" id="Ladders_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="Ladders_AtRisk" databaseColumn="Ladders_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="g5" id="Ladders_SafeYes" value="Safe" uniqueRadioId="Ladders_Safe" databaseColumn="Ladders_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Eye Wash Station</label></td>
+							<td><input class="atriskBox" type="radio" name="g6" id="EyeWash_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="EyeWash_AtRisk" databaseColumn="EyeWash_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="g6" id="EyeWash_SafeYes" value="Safe" uniqueRadioId="EyeWash_Safe" databaseColumn="EyeWash_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Lifting Gear</label></td>
+							<td><input class="atriskBox" type="radio" name="g7" id="LiftingGear_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="LiftingGear_AtRisk" databaseColumn="LiftingGear_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="g7" id="LiftingGear_SafeYes" value="Safe" uniqueRadioId="LiftingGear_Safe" databaseColumn="LiftingGear_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Fire Protection</label></td>
+							<td><input class="atriskBox" type="radio" name="g8" id="FireProtection_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="FireProtection_AtRisk" databaseColumn="FireProtection_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="g8" id="FireProtection_SafeYes" value="Safe" uniqueRadioId="FireProtection_Safe" databaseColumn="FireProtection_Safe" elementType="radiogroup"></td>
+						</tr>
+						<tr>											
+							<td class="tdLabel"><label>Moving Conveyances</label></td>
+							<td><input class="atriskBox" type="radio" name="g9" id="MovingConveyances_Safe" executeInstanceFunction="addTextAreaByRadio" value="AtRisk" uniqueRadioId="MovingConveyances_AtRisk" databaseColumn="MovingConveyances_Safe" elementType="radiogroup"></td>
+							<td><input class="safeBox" type="radio" name="g9" id="MovingConveyances_SafeYes" value="Safe" uniqueRadioId="MovingConveyances_Safe" databaseColumn="MovingConveyances_Safe" elementType="radiogroup"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div id="blockH">
+				<div class="blockHeader">Overall Housekeeping:</div>
+				<textarea name="OverallHouseKeeping_Comments" id="OverallHouseKeeping_Comments" databaseColumn="OverallHouseKeeping_Comments" elementType="textarea"></textarea>
+			</div>
+
+			<div id="blockI">
+				<div class="blockHeader">Comments:</div>
+				<textarea id="Overall_Comments" name="Overall_Comments" databaseColumn="Overall_Comments" elementType="textarea"></textarea>
+			</div>
+
+			<div id="blockJ">
+				<p>to find the percentage of safe work, take the number of safe observations and divide the total number of safe + at risk observations and then multiply by 100.</p>
+			</div>
+
+			<div id="signature_container"></div>
+
+			<div id="picture_container"></div>
+
+			<div id="button_container">
+				<!--<input id="reset_button" type="button" value="Reset"></button>
+				<input id="save_button" type="submit" value="Save"></button>
+				<input id="submit_button" type="submit" value="Submit"></button>-->
+			</div>
+		</div>
+	</div>
+</div>

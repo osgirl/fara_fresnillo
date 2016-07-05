@@ -1,0 +1,54 @@
+/*============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			AARON MCCOLOUGH
+	Application Name:	FARA
+	Directory:			FARA/DBA/CSS
+	File Name:			tableEntry.css
+=============================================================*/
+
+#content_container #table_form_receiver #generatedForm {
+	background: #ededed;
+	padding: 4px;
+}
+
+#content_container #table_form_receiver #formTable {
+	width:800px;
+}
+
+#content_container #table_form_receiver .headerTitle {
+}
+
+#content_container #table_form_receiver .columnTitle {
+}
+
+#content_container #table_form_receiver .columnForTitle {
+}
+
+#content_container #table_form_receiver .columnForControl {
+}
+
+#content_container #table_form_receiver .generatedDropDownList {
+	min-width:200px;
+}
+
+#content_container #table_form_receiver .generatedTextArea {
+	min-width:200px;
+}
+
+#content_container #table_form_receiver .generatedTextField {
+	min-width:200px;
+}
+
+#content_container #table_form_receiver .generatedCheckbox {
+	padding: 5px;
+	margin: 6px 0px;
+	width: 20px;
+	height: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    #content_container #table_form_receiver form {
+        width: 100%;
+		left: 0px;
+    }
+}

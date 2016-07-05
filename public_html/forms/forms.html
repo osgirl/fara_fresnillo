@@ -1,0 +1,39 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			AARON MCCOLOUGH
+	Application Name:	FARA
+	Directory:			FARA/FORMS
+	File Name:			forms.html
+=============================================================-->
+
+<!-- PAGE STYLES -->
+<link href="../forms/css/main.css" rel="stylesheet"/>
+
+<!-- PAGE SCRIPTS -->
+<script type="text/javascript" src="../forms/js/utilities.js"></script>
+<script type="text/javascript" src="../forms/js/get_form_types.js"></script>
+<script type="text/javascript" src="../forms/js/load_form.js"></script>
+<script type="text/javascript" src="../forms/js/saved_jqxgrid_load.js"></script>
+<script type="text/javascript" src="../forms/js/submitted_jqxgrid_load.js"></script>
+<script type="text/javascript" src="../forms/js/extract_inject.js"></script>
+
+<div id="content_container">	
+	<div id="form_receiver" style="overflow-y: auto; width: 100%; height: calc(100% - 37px); height: -moz-calc(100% - 37px); height: -webkit-calc(100% - 37px); position: fixed; top: 37px; left: 0; background: #eee;"></div>
+	
+	<div class="fixed-action-btn horizontal" style="bottom: 20px; right: 20px;">
+		<a class="btn-floating btn-large waves-effect waves-light red">
+			<i class="large material-icons">more_horiz</i>
+		</a>
+		<ul>
+			<li><a onclick="FormsButtonClicked()" class="btn-floating blue lighten-1 tooltipped" data-position="top" data-delay="25" data-tooltip="Select Forms"><i class="material-icons">assignment</i></a></li>
+			<li><a onclick="ResetButtonClicked()" class="btn-floating orange tooltipped" data-position="top" data-delay="25" data-tooltip="Reset Form"><i class="material-icons">undo</i></a></li>
+			<li><a onclick="SaveButtonClicked()" class="btn-floating green tooltipped" data-position="top" data-delay="25" data-tooltip="Save As"><i class="material-icons">save</i></a></li>
+			<li><a onclick="UploadButtonClicked()" class="btn-floating purple lighten-2 tooltipped" data-position="top" data-delay="25" data-tooltip="Save"><i class="material-icons">file_upload</i></a></li>
+			<li><a onclick="PrintButtonClicked('form_container')" class="btn-floating grey tooltipped" data-position="top" data-delay="25" data-tooltip="Print Preview"><i class="material-icons">print</i></a></li>
+		</ul>
+	</div>
+</div>
+
+
+
+

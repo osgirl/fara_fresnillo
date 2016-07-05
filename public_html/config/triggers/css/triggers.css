@@ -1,0 +1,11 @@
+/*============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			ZAC CARTER
+	Application Name:	FARA
+	Directory:			FARA/CONFIG/TRIGGERS/CSS
+	File Name:			triggers.css
+=============================================================*/
+
+#content_container .tabs .indicator {
+	background-color: #ff9800;
+}

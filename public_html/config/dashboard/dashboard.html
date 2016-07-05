@@ -1,0 +1,71 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			JORGE MURILLO
+	Application Name:	FARA
+	Directory:			FARA/CONFIG/DASHBOARD
+	File Name:			dashboard.html
+=============================================================-->
+
+<!-- PAGE STYLES -->
+<link rel="stylesheet" href="../config/dashboard/css/style.css">
+
+<!-- PAGE SCRIPTS -->
+<script type="text/javascript" src="../config/dashboard/js/main.js"></script>
+
+<div id="content_container">
+	<div class="row" style="height:calc(100% - 20px)">
+		<div class="col s12 m10 l8 offset-m1 offset-l2" style="height:100%">
+			<div class="card-panel hoverable" style="height:calc(100% - 20px); min-height:640px;">
+				<h5 class="center-align">Dashboard Configuration</h5>
+				
+				<div class="row" style="height:calc(100% - 65px)">
+					<div class="col s12 l6" style="height:100%">
+						<h5 class="center-align" id="dash-title">Config List</h5>
+						<div class="input-field col s12">
+							<i class="material-icons prefix">search</i>
+							<input id="dash_search" type="text" data-list="#dash-collection">
+							<label for="icon_prefix">Search</label>
+						</div>
+						<ul id="dash-collection" class="collection collapsible collection-box" data-collapsible="accordion" style="height:calc(100% - 120px)"></ul>
+					</div>
+				
+					<form class="col s12 l6" id="add-dash">
+						<div class="row">
+							<div class="col s12">
+								<h5 class="center-align" id="add-title">Add New Config</h5>
+							</div>
+							<div class="input-field col s12">
+								<select id="dash_cat">
+									<option value="">Choose a Category</option>
+									<option value="Worktype">Worktype</option>
+									<option value="Region">Region</option>
+								</select>
+								<label>Category</label>
+							</div>
+							<div class="input-field col s6">
+								<input id="item_name" type="text" class="validate">
+								<label for="item_name">Name</label>
+							</div>
+							<div class="input-field col s6">
+								<input type="checkbox" id="active_id" checked="checked" />
+								<label for="active_id">Active</label>
+							</div>
+							<div class="right" id="form-btns" style="margin-top: 40px">
+								<a id="btn-adddash" class="waves-effect waves-light btn orange darken-3"><i class="material-icons left">add</i>add item</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+  <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red" onclick="LoadBottomSheet()">
+      <i class="large material-icons">grid_on</i>
+    </a>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,89 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			JORGE MURILLO
+	Application Name:	FARA
+	Directory:			FARA/CONFIG/MEASURES
+	File Name:			measures.html
+=============================================================-->
+
+<!-- PAGE STYLES -->
+<link rel="stylesheet" href="../config/measures/css/style.css">
+
+<!-- PAGE SCRIPTS -->
+<script type="text/javascript" src="../config/measures/js/main.js"></script>
+
+<div id="content_container">
+	<div class="row" style="height:calc(100% - 20px)">
+		<div class="col s12 m10 l8 offset-m1 offset-l2" style="height: auto">
+			<div class="card-panel hoverable" style="height:calc(100% - 20px); min-height:980px;">
+				<h5 class="center-align">Measures Configuration</h5>
+				
+				<div class="row" style="height:calc(100% - 65px)">
+					<div class="col s12 l6" style="height:100%">
+						<h5 class="center-align" id="measure-title">Measures List</h5>
+						<div class="input-field col s12">
+							<i class="material-icons prefix">search</i>
+							<input id="measure_search" type="text" data-list="#measure-collection">
+							<label for="icon_prefix">Search</label>
+						</div>
+						<ul id="measure-collection" class="collection collapsible collection-box" data-collapsible="accordion" style="height:calc(100% - 120px)"></ul>
+					</div>
+				
+					<form class="col s12 l6" id="add-measure">
+						<div class="row">
+							<div class="col s12">
+								<h5 class="center-align" id="add-title">Add New Measure</h5>
+							</div>
+							<div class="input-field col s6">
+								<input id="measure_name" type="text" class="validate">
+								<label for="measure_name">Name</label>
+							</div>
+							<div class="input-field col s6">
+								<input type="checkbox" id="req_wktp" />
+								<label for="req_wktp">Requires Worktype</label>
+							</div>
+							<div class="input-field col s12">
+								<textarea id="area_description" class="materialize-textarea"></textarea>
+								<label for="area_description">Description</label>
+							</div>
+							<div class="input-field col s12">
+								<textarea id="area_objective" class="materialize-textarea"></textarea>
+								<label for="area_objective">Objective</label>
+							</div>
+							<div class="input-field col s12">
+								<textarea id="area_tips" class="materialize-textarea"></textarea>
+								<label for="area_tips">Tips</label>
+							</div>
+							<div class="input-field col s6">
+								<input id="measure_label" type="text" class="validate">
+								<label for="measure_label">Label</label>
+							</div>
+							<div class="input-field col s6">
+								<select id="type_measure">
+									<option value="">Choose an Award Type</option>
+								</select>
+								<label>Award Type</label>
+							</div>
+							<div class="input-field col s12">
+								<textarea id="area_query" class="materialize-textarea"></textarea>
+								<label for="area_query">Query</label>
+							</div>
+							<div class="input-field col s12">
+								<textarea id="area_sqllite" class="materialize-textarea"></textarea>
+								<label for="area_sqllite">SQL Lite</label>
+							</div>
+							<div class="right" id="form-btns" style="margin-top: 40px">
+								<a id="btn-addmeasure" class="waves-effect waves-light btn orange darken-3"><i class="material-icons left">add</i>add measure</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+  <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red" onclick="LoadBottomSheet()">
+      <i class="large material-icons">grid_on</i>
+    </a>
+  </div>
+</div>

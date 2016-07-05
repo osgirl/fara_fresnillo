@@ -1,0 +1,50 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			JORGE MURILLO
+	Application Name:	FARA
+	Directory:			FARA/BEACONS
+	File Name:			beacons.html
+=============================================================-->
+
+<!-- PAGE STYLES -->
+<link rel="stylesheet" href="../config/beacons/css/style.css">
+
+<!-- PAGE SCRIPTS -->
+<script type="text/javascript" src="../config/beacons/js/script.js"></script>
+<script type="text/javascript" src="../config/beacons/js/beacons.js"></script>
+<script type="text/javascript" src="../config/beacons/js/beacon_groups.js"></script>
+<script type="text/javascript" src="../config/beacons/js/beacon_assignments.js"></script>
+		
+<div id="content_container">
+	<div class="container hoverable" style='margin-top: 15px;'>
+		<div class="row z-depth-1" style="margin-top: -15px; padding: 15px; background-color: #EF6C00; margin: 0.5rem 0 1rem 0; position: relative">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s4"><a href="#beagroups" onclick="loadConfig('beacon_groups', 'BeaconGroupsInit()')">Beacon Groups</a></li>
+          <li class="tab col s4"><a href="#bea" onclick="loadConfig('new_beacons', 'BeaconsInit()')">Beacons</a></li>
+          <li class="tab col s4"><a href="#beaass" onclick="loadConfig('beacon_assignments', 'BeaconAssignmentsInit()')">Beacon Assignments</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-panel" style="margin-top: -15px; border-radius: 0px;">
+      <div id="content-load">
+        
+      </div>
+    </div>
+  </div>
+  <div id="confirm-modal" class="modal">
+		<div class="modal-content">
+			<h4>Confirmation</h4>
+			<p>Are you sure you want to delete?</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat">No</a>
+			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+		</div>
+	</div>
+  <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red" onclick="LoadBottomSheet()">
+      <i class="large material-icons">grid_on</i>
+    </a>
+  </div>
+</div>

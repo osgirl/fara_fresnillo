@@ -1,0 +1,101 @@
+
+/*======================================================
+				      GENERAL STYLES
+========================================================*/
+
+.altTheme label, .altTheme h2, .altTheme h3, .altTheme span, .altTheme input  {
+	color: #fff;
+}
+
+.altTheme body {
+	background:#000;
+}
+
+.altTheme #form_container {
+	background: #333;
+	-moz-box-shadow:none !important;
+	-webkit-box-shadow:none !important;
+	box-shadow: none !important; 
+}
+
+.altTheme .ui-widget-header {
+	background: #333;
+}
+
+.altTheme .ui-widget-content {
+	background: #222;
+	border: 1px solid #000;
+}
+
+.altTheme #form_container {
+	background: #333;
+}
+
+.altTheme input, .altTheme textarea, .altTheme select {
+	border: 1px solid #000;
+	background: #222;
+	color: #fff;
+}
+
+.altTheme .lightBox {
+	background: #393939;
+}
+
+.altTheme .darkBox {
+	background: #444;
+}
+
+.altTheme input[type="button"], .altTheme input[type="submit"] {
+	color: #fff;
+	background: #f48f11;
+	border: 2px solid #c7740e;
+}
+
+.altTheme .smallbtn {
+	border: 1px solid #c7740e !important;
+}
+
+.altTheme input[type="button"]:hover, .altTheme input[type="submit"]:hover {
+	cursor: pointer;
+	background: #f4ab50;
+}
+
+.altTheme textarea {
+	color: #fff;
+}
+
+.altTheme #blockC select {
+	color: #fff;
+	background: #222;
+	border: 1px solid #000;
+}
+
+.altTheme #blockC button {
+	color: #fff;
+	background: #222;
+	border: 1px solid #000;
+}
+
+.altTheme #other_option {
+	color: #fff;
+}
+
+.altTheme #select_options {
+	color: #fff;
+}
+
+.altTheme #blockF input[type="text"] {
+	color: #fff;
+}
+
+.altTheme #blockF input[type="time"] {
+	color: #fff;
+}
+
+.altTheme .divLabel {
+	color: #fff !important;
+}
+
+.altTheme #blockG input {
+	border-color: #fff;
+}

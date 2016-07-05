@@ -1,0 +1,93 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			JORGE MURILLO
+	Application Name:	FARA
+	Directory:			FARA/CONFIG/GOALS
+	File Name:			goals.html
+=============================================================-->
+
+<!-- PAGE STYLES -->
+<link rel="stylesheet" href="../config/goals/css/style.css">
+
+<!-- PAGE SCRIPTS -->
+<script type="text/javascript" src="../config/goals/js/main.js"></script>
+
+<div id="content_container">
+	<div class="row" style="height:calc(100% - 20px)">
+		<div class="col s12 m10 l8 offset-m1 offset-l2" style="height:100%">
+			<div class="card-panel hoverable" style="height:calc(100% - 20px); min-height:640px;">
+				<h5 class="center-align">Goals Configuration</h5>
+				
+				<div class="row" style="height:calc(100% - 65px)">
+					<div class="col s12 l6" style="height:100%">
+						<h5 class="center-align" id="goals-title">Goals List</h5>
+						<div class="input-field col s12">
+							<i class="material-icons prefix">search</i>
+							<input id="goals_search" type="text" data-list="#dash-collection">
+							<label for="icon_prefix">Search</label>
+						</div>
+						<ul id="goals-collection" class="collection collapsible collection-box" data-collapsible="accordion" style="height:calc(100% - 120px)"></ul>
+					</div>
+				
+					<form class="col s12 l6" id="add-goal">
+						<div class="row">
+							<div class="col s12">
+								<h5 class="center-align" id="add-title">Add New Goal</h5>
+							</div>
+							<div class="input-field col s12">
+								<select id="measures_list">
+									<option value="0">Choose a Measure</option>
+								</select>
+								<label>Measure</label>
+							</div>
+							<div id="sub-form" style="display:none">
+								<div class="input-field col s6">
+									<input id="goal_name" type="text" class="validate">
+									<label for="item_name">Name</label>
+								</div>
+								<div class="input-field col s6">
+									<select id="worktype_list">
+										<option value="0">Choose a Worktype</option>
+									</select>
+									<label for="worktype_list">WorkType</label>
+								</div>
+								<div class="input-field col s6">
+									<select id="awardee_list">
+										<option value="0">Choose an Option</option>
+									</select>
+									<label for="awardee_list">Awardee</label>
+								</div>
+								<div class="input-field col s6">
+									<input id="num_points" type="text" class="validate">
+									<label for="num_points">No. of Points</label>
+								</div>
+								<div class="input-field col s6">
+									<select id="operator_list">
+										<option value="0">Choose an Operator</option>
+									</select>
+									<label for="operator_list">Operator</label>
+								</div>
+								<div class="input-field col s6">
+									<input id="num_goal" type="text" class="validate">
+									<label for="num_goal">Threshold Goal</label>
+								</div>
+								<div class="right" id="form-btns" style="margin-top: 40px">
+									<a onclick="ExportConfig()" id="btn-addgoal" class="waves-effect waves-light btn orange darken-3"><i class="material-icons left">add</i>add item</a>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+  <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red" onclick="LoadBottomSheet()">
+      <i class="large material-icons">grid_on</i>
+    </a>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contactos Personales</title>
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+<link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet"/>
+<link href="css/main.css" rel="stylesheet"/>
+<link href="css/forms.css" rel="stylesheet"/>
+<link href="css/altTheme.css" rel="stylesheet"/>
+<link href="css/jqueryui.css" rel="stylesheet"/>
+<script type="text/javascript">
+var rootURL = "http://192.168.1.91:8888/";
+</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
+<script type="text/javascript" src="js/appendCmntsBox.js"></script>
+<script type="text/javascript" src="js/declarations.js"></script>
+<script type="text/javascript" src="js/utilities.js"></script>
+<script type="text/javascript" src="js/extract_inject.js"></script>
+</head>
+<body>
+	<div id="form_container">
+			<div id="blockA">
+				<h2>Contacto Personales</h2>
+			</div>
+
+			<hr>
+
+			<div id="blockB">
+			
+				<div>
+					<label>Facilitador:</label>
+					<input id="facilitator_text" type="text" name="CompletedByName">
+					
+					<label>Acuterea:</label>
+					<select id="Area" name="Area">
+						<option value="1">-- Seleccione --</option>
+						<option value="2">Circuito Fino</option>
+						<option value="3">Circuito Primerio</option>
+						<option value="4">Circuito Nuevo</option>
+					</select>
+				</div>
+				
+				<div>										
+					<label>Persona Observada:</label>
+					<input id="subject_text" type="text" name="CompletedForName">
+					
+					<label>Fecha:</label>
+					<input id="date_box" type="datetime-local" name="ShiftDate">
+				</div>
+				
+				<div>										
+					<label>Trabajo Observado:</label>
+					<input id="work_text" type="text" name="WorkObserved">
+				</div>
+				
+				<div>										
+					<label>Se Observo:</label>
+					<textarea name="Observations" id="Observations"></textarea>
+				</div>
+				
+			</div>
+			
+			<hr>
+			
+			<div id="blockC">
+			
+				<div>
+					<div>
+						<label>Condicion Peligrosa:</label>
+						<textarea style="" name="HazardousCondition" id="HazardousCondition"></textarea>
+					</div>
+					<div>
+						<label>Acto Seguro:</label>
+						<textarea name="UnsafeAct" id="UnsafeAct"></textarea>
+					</div>
+				</div>
+				
+				<div>
+					<div>
+						<label>Falla Administrativa:</label>
+						<textarea name="AdministrativeFailure" id="AdministrativeFailure"></textarea>
+					</div>
+					<div>
+						<label>Otros:</label>
+						<textarea name="Others" id="Others"></textarea>
+					</div>
+				</div>
+				
+			</div>
+			
+			<br>
+			<hr>
+			<br>
+
+			<div id="blockD">
+			
+				<div class="divLabel">Causa Por:</div>
+				
+				<div class="cbBlock">										
+					<div class="darkBox">										
+						<label>Falta de Induccion:</label>
+						<input type="checkbox" class="cbwe" id="LackOfTraining" executeSpecialFunction="true">
+					</div>
+					<div class="lightBox">											
+						<label>Mal Estendido:</label>
+						<input type="checkbox" class="cbwe" id="Misunderstanding" executeSpecialFunction="true">
+					</div>
+					<div class="darkBox">
+						<label>No sabia:</label>
+						<input type="checkbox" class="cbwe" id="DidNotKnow" executeSpecialFunction="true">
+					</div>
+					<div class="lightBox">
+						<label>No Podia:</label>
+						<input type="checkbox" class="cbwe" id="CouldNotPerform" executeSpecialFunction="true">
+					</div>
+				</div>
+				<div class="cbBlock">
+					<div class="darkBox">	
+						<label>No Queria:</label>
+						<input type="checkbox" class="cbwe" id="DidnotWant" executeSpecialFunction="true">
+					</div>
+					<div class="lightBox">	
+						<label>Mal Diseno:</label>
+						<input type="checkbox" class="cbwe" id="BadDesign" executeSpecialFunction="true">
+					</div>
+					<div class="darkBox">	
+						<label>Procedimiento Inapropiado de Trabajo:</label>
+						<input type="checkbox" class="cbwe" id="InappopWorkProc" executeSpecialFunction="true">
+					</div>
+					<div class="lightBox">	
+						<label>Otros:</label>
+						<input type="checkbox" class="cbwe" id="CausedbyOthers" executeSpecialFunction="true">
+					</div>
+				</div>
+			</div>
+			
+			<br>
+			<hr>
+			<br>
+
+			<div id="blockE">
+				
+				<div class="divLabel">Contacto Personal:</div>
+				
+				<div class="cbBlock">
+					<div class="darkBox">										
+						<label>Escucharlo:</label>
+						<input type="checkbox" class="cbwe" id="ListenTo" executeSpecialFunction="true">
+					</div>
+					<div class="lightBox">	
+						<label>Inducirlo:</label>
+						<input type="checkbox" class="cbwe" id="Induct" executeSpecialFunction="true">
+					</div>
+					<div class="darkBox">	
+						<label>Capacitarlo:</label>
+						<input type="checkbox" class="cbwe" id="Train" executeSpecialFunction="true">
+					</div>
+					<div class="lightBox">	
+						<label>Orientarlo:</label>
+						<input type="checkbox" class="cbwe" id="Orient" executeSpecialFunction="true">
+					</div>
+				</div>
+						
+				<div class="cbBlock">
+					<div class="darkBox">												
+						<label>Amonestarlo:</label>
+						<input type="checkbox" class="cbwe" id="Warn" executeSpecialFunction="true">
+					</div>
+					<div class="lightBox">
+						<label>Investigarlo:</label>
+						<input type="checkbox" class="cbwe" id="Investigate" executeSpecialFunction="true">
+					</div>
+					<div class="darkBox">
+						<label>Otros:</label>
+						<input type="checkbox" class="cbwe" id="PersonalContactOthers" executeSpecialFunction="true">
+					</div>
+				</div>
+			</div>
+
+			<br>
+
+			<div id="blockF">
+			
+				<label>Si es Positivo el Contacto, Explicar:</label>
+				<textarea name="PositiveContactExplain" id="PositiveContactExplain"></textarea>
+				
+			</div>
+
+			<div id="blockG">
+				<div>								
+					<input type="text" class="sig_box" id="SupervisorSignature" name="SupervisorSignature">
+					<label>Nombre y Firma del Facilatador</label>
+				</div>
+				<div>										
+					<input type="text" class="sig_box" id="EmployeeSignature" name="EmployeeSignature">										
+					<label>Nombre y Firma del Colaborador</label>
+				</div>										
+			</div>
+
+			<br>
+
+			<div><input id="submit_button" type="submit" value="Enviar Formato"></button></div>
+
+	</div>
+						
+</body>
+</html>

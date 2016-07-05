@@ -1,0 +1,588 @@
+/*============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			AARON MCCOLOUGH
+	Application Name:	FARA
+	Directory:			FARA/DBA/CSS
+	File Name:			main.css
+=============================================================*/
+
+#content_container #table_structure_input td {
+	padding: 6px;
+}
+
+#content_container .structText1 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #477fbd;
+}
+
+#content_container .structText2 {
+	font-size: 16px;
+	width: 120px;
+	text-align: right;
+}
+
+#content_container .structText2b {
+	font-size: 16px;
+	width: 90px;
+	text-align: right;
+}
+
+#content_container .structText3 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #477fbd;
+	position: relative;
+	height: 34px;
+	margin-bottom: -20px;
+}
+
+#content_container .ordinalChange {
+	color: #fd3232 !important;
+}
+
+#content_container .structText3 span {
+	position: absolute;
+	right: 10px;
+	top: 4px;
+}
+
+#content_container .structTextInput {
+	width: 100%;
+	height: 30px;
+	font-size: 14px;
+	border-radius: 3px;
+	padding: 4px;
+	border: 1px solid #a9a9a9;
+}
+
+#content_container .structSelectInput {
+	width: 100%;
+	height: 30px;
+	font-size: 14px;
+	border-radius: 3px;
+}
+
+#content_container .structSelectInput:enabled {
+	cursor: pointer;
+}
+
+#content_container .structTextAreaInput {
+	max-width: 100%;
+	width: 100%;
+	height: 60px;
+	font-size: 14px;
+	border-radius: 3px;
+}
+
+#content_container .structButtonInput {
+	color: rgba(0,69,111,0.9);
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#content_container .structButtonInput:hover {
+	cursor: pointer;
+}
+
+#content_container {
+	height: 100%;
+	width: 100%;
+	vertical-align: top;
+	overflow: hidden;
+	padding-top: 37px;
+	background: rgba(0,0,0,0.7);
+}
+
+#content_container #table_container {
+	width: 1110px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#content_container #create_table_container {
+	display: inline-block;
+	height: 100%;
+	width: 350px;
+	vertical-align: top;
+	padding: 8px;
+}
+
+#content_container #create_table_form {
+	height: 100%;
+	width: 100%;
+	padding: 4px;
+	border: 1px dashed #fff;
+}
+
+#content_container #table_header {
+	background: #f0efea;
+	color: rgba(0,0,0,0.7);
+	display: block;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 8px;
+	text-align: center;
+	border-radius: 4px;
+	height: 34px;
+	margin-bottom: 8px;
+}
+
+#content_container #listbox_container {
+	height: calc(100% - 88px);
+}
+
+#content_container #jqxlistbox {
+	margin-left: -1px;
+	font-size: 14px;
+	overflow-y: auto;
+}
+
+#content_container #add_table_input {
+	background: #f0efea;
+	border-radius: 3px;
+	border: 1px solid #c7c7c7;
+	padding: 4px;
+	width: 100%;
+	height: auto;
+	margin-top: 4px;
+}
+
+#content_container #add_table_input input {
+	margin-top: 4px;
+	border-radius: 3px;
+	display: inline-block;
+	width: calc(100% - 70px);
+	margin-right: 4px;
+	color: #000;
+	background: #fff;
+}
+
+#content_container #table_list_button_container {
+	display: inline-block;
+	vertical-align: middle;
+	height: auto;
+}
+
+#content_container #table_list_add_button {
+	width: 25px;
+	height: 25px;
+	background: url("../../../images/add_icon.png") no-repeat center;
+	background-size: contain;
+	display: inline-block;
+	margin-top: 4px;
+}
+
+#content_container #table_list_remove_button {
+	width: 25px;
+	height: 25px;
+	background: url("../../../images/cancel_icon.png") no-repeat center;
+	background-size: contain;
+	display: inline-block;
+	margin-right: 4px;
+	margin-top: 4px;
+}
+
+#content_container #table_list_add_button:hover, #content_container #table_list_remove_button:hover {
+	cursor: pointer;
+}
+
+#content_container #table_structure_container {
+	display: inline-block;
+	height: 100%;
+	vertical-align: top;
+	padding: 8px;
+	width: calc(100% - 360px);
+	overflow-y: auto;
+}
+
+#content_container #table_structure_form {
+	height: auto;
+	width: 100%;
+	padding: 4px;
+	border: 1px dashed #fff;
+}
+
+#content_container #table_structure_header {
+	background: #f0efea;
+	display: block;
+	border-radius: 4px;
+	height: 34px;
+	margin-bottom: 8px;
+	color: rgba(0,0,0,0.7);
+	font-weight: bold;
+	font-size: 22px;
+	text-align: center;
+	padding: 4px;
+}
+
+#content_container #table_structure_sub_header {
+	display: block;
+	background: #d1d1d1;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 8px;
+	border-radius: 3px 3px 0px 0px;
+	height: 34px;
+	position: relative;
+	margin-bottom: -7px;
+}
+
+#content_container #table_structure_bar {
+	display: block;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 4px;
+	height: 34px;
+	position: relative;
+	background: #477fbd;
+}
+
+#content_container #table_structure_bar table {
+	width: 100%;
+}
+
+#content_container #table_structure_bar td {
+	width: 50%;
+	color: #477fbd;
+	font-size: 22px;
+}
+
+#content_container #table_structure_header_tab1 {
+	color: rgba(0,0,0,0.7);
+	display: block;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 4px;
+	text-align: center;
+	border-radius: 3px;
+	height: 28px;
+	position: absolute;
+	z-index: 10;
+	cursor: pointer;
+	top: 3px;
+	left: 4px;
+}
+
+#content_container #table_structure_header_tab2 {
+	color: rgba(0,0,0,0.2);
+	display: block;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 4px;
+	text-align: center;
+	border-radius: 3px;
+	height: 28px;
+	position: absolute;
+	z-index: 10;
+	left: 143px;
+	top: 3px;
+}
+
+#content_container #form_receiver {
+	position: relative;
+}
+
+#content_container .tab_open {
+	z-index: 20 !important;	
+	box-shadow: inset 0px 1px 2px 1px #444 !important;
+}
+
+#content_container .columnStruct {
+	padding: 4px;
+	position: relative;
+}
+
+#content_container .sqlTextArea {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	height: 100px;
+	font-size: 20px;
+}
+
+#content_container .sqlTextBox {
+	margin-top: 4px;
+	display: block;
+	width: 100%;
+	height: 50px;
+	font-size: 16px;
+}
+
+#content_container #meta_label {
+	position: relative;
+	height: 34px;
+}
+
+#content_container #meta_label .structText1 {
+	position: absolute;
+	left: 10px;
+	top: 4px;
+}
+
+#content_container #table_structure_input {
+	background: #fff;
+	overflow-y: auto;
+	max-height: 380px; /*488px*/
+}
+
+#content_container .rowContainer1 {
+	background: #ededed;
+}
+
+#content_container .rowContainer0 {
+	background: #fff;
+}
+
+#content_container .columnSection {
+	display: inline-block;
+	width: auto;
+}
+
+#content_container #add_column_container, #content_container #load_record_container {
+	position: relative;
+	height: 34px;
+	margin-top: -7px;
+	background: #d1d1d1;
+	border-radius: 0 0 3px 3px;
+}
+
+#content_container #table_structure_button_container {
+	display: inline-block;
+	vertical-align: middle;
+	height: auto;
+	position: absolute;
+	top: 2px;
+	left: 8px;
+}
+
+#content_container #table_structure_right_btn_container {
+	display: inline-block;
+	vertical-align: middle;
+	height: auto;
+	position: absolute;
+	top: 2px;
+	right: 8px;
+}
+
+#content_container #table_record_button_container {
+	display: inline-block;
+	vertical-align: middle;
+	height: auto;
+	position: absolute;
+	top: 2px;
+	left: 4px;
+}
+
+#content_container #table_structure_add_button {
+	width: 25px;
+	height: 25px;
+	background: url("../../../images/add_icon.png") no-repeat center;
+	background-size: contain;
+	display: inline-block;
+	margin-top: 4px;
+	margin-right: 4px;
+	cursor: pointer;
+}
+
+#content_container #table_structure_upload_button {
+	width: 25px;
+	height: 25px;
+	background: url("../../../images/upload_inactive_icon.png") no-repeat center;
+	background-size: contain;
+	display: inline-block;
+	margin-right: 4px;
+	margin-top: 4px;
+}
+
+#content_container #table_structure_sql_toggle {
+	width: 25px;
+	height: 25px;
+	background: url("../../../images/sql_icon.png") no-repeat center;
+	background-size: contain;
+	display: inline-block;
+	margin-right: 4px;
+	margin-top: 4px;
+	cursor: pointer;
+}
+
+#content_container #table_structure_lock_button {
+	width: 25px;
+	height: 25px;
+	background: url("../../../images/unlock_icon.png") no-repeat center;
+	background-size: contain;
+	display: inline-block;
+	margin-right: 4px;
+	margin-top: 4px;
+	cursor: pointer;
+}
+
+#content_container #table_record_add_button {
+	width: 25px;
+	height: 25px;
+	background: url("../../../images/upload_icon.png") no-repeat center;
+	background-size: contain;
+	display: inline-block;
+	margin-top: 4px;
+	margin-left: 4px;
+	cursor: pointer;
+}
+
+#content_container #table_record_reset_button {
+	width: 25px;
+	height: 25px;
+	background: url("../../../images/reset_icon.png") no-repeat center;
+	background-size: contain;
+	display: inline-block;
+	margin-top: 4px;
+	margin-left: 4px;
+	cursor: pointer;
+}
+
+#content_container #table_record_remove_button {
+	width: 25px;
+	height: 25px;
+	background: url("../../../images/cancel_inactive_icon.png") no-repeat center;
+	background-size: contain;
+	display: inline-block;
+	margin-top: 4px;
+	margin-left: 4px;
+}
+
+#content_container .table_structure_remove_button {
+	width: 25px;
+	height: 25px;
+	background: url("../../../images/cancel_icon.png") no-repeat center;
+	background-size: contain;
+	position: absolute;
+	right: 40px;
+	top: 32px;
+	cursor: pointer;
+}
+
+#content_container .table_structure_reorder_container {
+	display: inline-block;
+	vertical-align: middle;
+	height: auto;
+	position: absolute;
+	right: 12px;
+	top: 23px;
+}
+
+#content_container .table_structure_move_up {
+	width: 16px;
+	height: 16px;
+	background: url("../../../images/move_up_icon.png") no-repeat center;
+	background-size: contain;
+	cursor: pointer;
+	display: block;
+	margin: 4px;
+}
+
+#content_container .table_structure_move_down { 
+	width: 16px;
+	height: 16px;
+	background: url("../../../images/move_down_icon.png") no-repeat center;
+	background-size: contain;
+	cursor: pointer;
+	display: block;
+	margin: 4px;
+}
+
+#content_container .table_structure_move_down:hover {
+	background-image: url("../../../images/move_down_hover_icon.png");
+}
+
+#content_container .table_structure_move_up:hover {
+	background-image: url("../../../images/move_up_hover_icon.png");
+}
+
+#content_container .cancelDisabled {
+	width: 25px;
+	height: 25px;
+	background: url("../../../images/cancel_inactive_icon.png") no-repeat center;	
+	background-size: contain;
+	position: absolute;
+	right: 40px;
+	top: 32px;
+	cursor: default;
+}
+
+#content_container .notEditable input, #content_container .notEditable select {
+	background: #d1d1d1;
+	color: #9a9a9a;
+	border: 1px solid #9a9a9a;
+	width: 150px;
+}
+
+#content_container input:disabled, #content_container select:disabled {
+	background: #d1d1d1;
+	color: #9a9a9a;
+	border: 1px solid #9a9a9a;
+}
+
+
+
+/*========================================
+			TABLE STRUCTURE GRID
+========================================*/
+
+#content_container #table_structure_grid {
+	height: auto;
+	width: 100%;
+	padding: 4px;
+	margin-top: 8px;
+	border: 1px dashed #fff;
+}
+
+/*==============================================================*/
+
+
+
+
+/*==============================================================
+						JQ WIDGETS
+==============================================================*/
+
+#content_container .gridOptions {
+	font-family: Helvetica, sans-serif !important;
+	font-size: 18px !important;
+	color: #2a2e30 !important;
+	background: #ddd !important;
+	border-radius: 2px !important;
+	border: 1px solid #aaa  !important;
+	padding: 3px !important;
+}
+
+#content_container .gridOptions:hover {
+	color: #8a97a0 !important;
+	cursor: pointer !important;
+}
+
+/*OVERRIDES*/
+
+#content_container .jqx-button {
+	  font-family: Helvetica, sans-serif !important;
+	  font-size: 18px !important;
+	  border: 1px solid #aaa !important;
+	  background: #ddd !important;
+	  color: #2a2e30;
+	  border-radius: 2px !important;
+}
+
+#content_container .jqx-button:hover {
+	color: #8a97a0 !important;
+	cursor: pointer;
+}
+
+#content_container #grid_add_button, #content_container #grid_cancel_button, #content_container #grid_upload_button {
+	background: none !important;
+	border: none !important;
+	width: 25px !important;
+	height: 25px !important;
+	padding: 0;
+}
+
+#content_container #grid_cancel_button {
+	margin: 2px auto;
+}

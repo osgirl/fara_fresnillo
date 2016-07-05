@@ -1,0 +1,71 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			JORGE MURILLO
+	Application Name:	FARA
+	Directory:			FARA/CONFIG/EQUIPMENT
+	File Name:			equipment.html
+=============================================================-->
+
+<!-- PAGE STYLES -->
+<link rel="stylesheet" href="../config/equipment/css/style.css">
+
+<!-- PAGE SCRIPTS -->
+<script type="text/javascript" src="../config/equipment/js/main.js"></script>
+		
+<div id="content_container">
+	<div class="container" style='margin-top: 10px;'>
+		<div class="card-panel hoverable">
+			<h5 class="center-align">Manage Equipment</h5>
+			
+			<div class="row">
+				<div class="input-field col s12">
+					<select id="select-worktype">
+						<option value="" disabled selected>Choose a Work Type</option>
+					</select>
+					<label>Work Type</label>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col s12 l6">
+					<h5 class="center-align" id="equ-title"></h5>
+					<ul id="equ-collection" class="collection">
+					</ul>
+				</div>
+			
+				<form class="col s12 l6" id="add-equipment">
+					<div class="row">
+						<div class="col s12">
+							<h5 class="center-align" id="add-title"></h5>
+						</div>
+						<div class="input-field col s12">
+							<input id="equipment_name" type="text" class="validate">
+							<label for="equipment_name">Equipment Number</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="equipment_model" type="text" class="validate">
+							<label for="equipment_model">Equipment Model</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="load_capacity_kg" type="text" class="validate">
+							<label for="load_capacity_kg">Load Capacity (Kg)</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="load_capacity_m3" type="text" class="validate">
+							<label for="load_capacity_m3">Load Capacity (m3)</label>
+						</div>
+						<div class="right" id="form-btns">
+							<a id="btn-addequipment" class="waves-effect waves-light btn orange darken-3"><i class="material-icons left">add</i>add equipment</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+  <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red" onclick="LoadBottomSheet()">
+      <i class="large material-icons">grid_on</i>
+    </a>
+  </div>
+</div>
+		

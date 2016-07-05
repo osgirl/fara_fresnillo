@@ -1,0 +1,45 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			JORGE MURILLO
+	Application Name:	FARA
+	Directory:			FARA/BEACONS/BEACON_ASSIGNMENTS
+	File Name:			beacon_assignments.html
+=============================================================-->
+
+  <h5 class="center-align">Manage Beacon Assignments</h5>
+  
+  <div class="row">
+    <div class="col s12 l6">
+      <h5 class="center-align" id="bea-title"></h5>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">search</i>
+        <input id="beacon_search" type="text" data-list="#bea-collection">
+        <label for="icon_prefix">Search</label>
+      </div>
+      <ul id="bea-collection" class="collection collection-box">
+      </ul>
+    </div>
+  
+    <form class="col s12 l6" id="add-beaconassign">
+      <div class="row">
+        <div class="col s12">
+          <h5 class="center-align" id="add-title">Add Beacon Assignment</h5>
+        </div>
+        <div class="input-field col s12">
+          <select id="slct_beacon">
+            <option value="" disabled>Choose a Beacon</option>
+          </select>
+          <label>Select Beacon</label>
+        </div>
+        <div class="input-field col s12">
+          <select id="slct_value">
+            <option value="" disabled>Choose an Assignment</option>
+          </select>
+          <label>Select Assignment</label>
+        </div>
+        <div class="right" id="form-btns">
+          <a id="btn-addbeaconassign" class="waves-effect waves-light btn orange darken-3"><i class="material-icons left">add</i>add assignment</a>
+        </div>
+      </div>
+    </form>
+  </div>

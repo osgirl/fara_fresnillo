@@ -1,0 +1,82 @@
+/*============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			JORGE MURILLO
+	Application Name:	FARA
+	Directory:			FARA/CONFIG/SEQUENCES/CSS
+	File Name:			style.css
+=============================================================*/
+
+#content_container input[type=text]:focus:not([readonly]), #content_container input[type=password]:focus:not([readonly]), #content_container input[type=email]:focus:not([readonly]), #content_container input[type=url]:focus:not([readonly]), #content_container input[type=time]:focus:not([readonly]), #content_container input[type=date]:focus:not([readonly]), #content_container input[type=datetime-local]:focus:not([readonly]), #content_container input[type=tel]:focus:not([readonly]), #content_container input[type=number]:focus:not([readonly]), #content_container input[type=search]:focus:not([readonly]), #content_container textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #ef6c00;
+    box-shadow: 0 1px 0 0 #ef6c00; 
+}
+
+#content_container input[type=text]:focus:not([readonly]) + label, #content_container input[type=password]:focus:not([readonly]) + label, #content_container input[type=email]:focus:not([readonly]) + label, #content_container input[type=url]:focus:not([readonly]) + label, #content_container input[type=time]:focus:not([readonly]) + label, #content_container input[type=date]:focus:not([readonly]) + label, #content_container input[type=datetime-local]:focus:not([readonly]) + label, #content_container input[type=tel]:focus:not([readonly]) + label, #content_container input[type=number]:focus:not([readonly]) + label, #content_container input[type=search]:focus:not([readonly]) + label, #content_container textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: #ef6c00;
+}
+		
+#content_container .secondary-content {
+  float: right;
+  /*color: #1565c0;*/
+}
+
+#content_container .collection .collection-item.active .secondary-content {
+	/*color: #1565c0; */
+}
+
+#content_container .collection .collection-item {
+  border-bottom: 0px solid #fff;
+}
+
+#content_container .collection .collection-item.active {
+  background-color: #fff;
+  color: rgba(0,0,0,0.87);
+}
+
+#content_container .collapsible-header {
+  background-color: transparent;
+}
+
+#content_container .collection-box {
+	height: 500px;
+	overflow-y: visible;
+}
+
+#content_container #page_title {
+	margin-top: 40px;
+}
+
+#content_container h1, #content_container h2 {
+	margin-left: calc(2% + 50px);
+}
+
+#content_container .table_container {
+	display: block;
+	width: 100%;
+}
+
+#content_container .bg-editblue {
+	background-color: #D5E4E8 !important;
+}
+
+#content_container .bg-oddcolor {
+	background-color: #F2F2F2 !important;
+}
+
+#content_container .list-title{
+	color: #F7FDFF;
+	text-align: center;
+	padding-top: 3px;
+	padding-bottom: 4px;
+	margin-top: 0px;
+}
+
+#content_container .num-circle{
+	margin: -2px 6px 0px 0px;
+	border-radius: 50%;
+	width: 28px;
+	height: 28px;
+	text-align: center;
+	line-height: 28px;
+	float: left;
+}

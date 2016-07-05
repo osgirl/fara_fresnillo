@@ -1,0 +1,314 @@
+/*============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			AARON MCCOLOUGH
+	Application Name:	FARA
+	Directory:			FARA/DBA/CSS
+	File Name:			main.css
+=============================================================*/
+
+/*========================================
+			MAIN CONTENT - STYLES
+========================================*/
+
+#content_container {
+	height: 100%;
+	width: 100%;
+	vertical-align: top;
+	overflow: hidden;
+	padding-top: 37px;
+	background: white;
+}
+
+#content_container #table_container {
+	width: 1110px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#content_container #create_table_container {
+	display: inline-block;
+	height: 100%;
+	width: 350px;
+	vertical-align: top;
+	padding: 8px;
+}
+
+#content_container #create_table_form {
+	height: 100%;
+	width: 100%;
+	padding: 4px;
+	border: 1px dashed #fff;
+}
+
+#content_container #listbox_container {
+	max-height: calc(100% - 183px);
+	height: auto;
+	overflow-y: auto;
+	border:1px solid #c7c7c7;
+}
+
+#content_container #form_struct_tree {
+	margin-left: -1px;
+	font-size: 14px;
+	overflow-y: auto;
+	border: none;
+	padding: 2px 0px;
+}
+
+#content_container .jqx-tree-item {
+	margin-bottom: 6px;
+	font-size: 14px;
+}
+
+content_container #add_table_input {
+	border: 1px solid #c7c7c7;
+	padding: 4px;
+	width: 100%;
+	height: auto;
+	margin: 4px 0px;
+}
+
+content_container #table_list_button_container {
+	display: inline-block;
+	vertical-align: middle;
+	height: auto;
+	position: relative;
+}
+
+/*========================================
+			CREATE TABLE STRUCTURE
+========================================*/
+
+#content_container #table_structure_container {
+	display: inline-block;
+	height: 100%;
+	vertical-align: top;
+	padding: 8px;
+	width: calc(100% - 360px);
+	overflow-y: auto;
+}
+
+#content_container #generated_form {
+	width: 100%;
+	height: 100%;
+	background: #333;
+}
+
+#content_container #table_tabs {
+	width: 100% !important;
+}
+
+#content_container #table_structure_form {
+	height: auto;
+	width: 100%;
+	padding: 4px;
+	border: 1px dashed #fff;
+}
+
+#content_container #table_structure_header {
+	font-size: 1.64rem;
+}
+
+#content_container #table_settings_header {
+	font-size: 1.4rem;
+}
+
+#content_container #table_structure_bar {
+	display: block;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 4px;
+	height: 34px;
+	position: relative;
+	background: #477fbd;
+}
+
+#content_container #table_structure_bar table {
+	width: 100%;
+}
+
+#content_container #table_structure_bar td {
+	width: 50%;
+	color: #477fbd;
+	font-size: 22px;
+}
+
+#content_container #form_receiver {
+	position: relative;
+}
+
+#content_container .tab_open {
+	z-index: 20 !important;	
+	box-shadow: inset 0px 1px 2px 1px #444 !important;
+}
+
+#content_container .columnStruct {
+	padding: 4px;
+	position: relative;
+}
+
+#content_container .ordinalButton, #content_container .deleteButton {
+	vertical-align: top;
+}
+
+#content_container #meta_label {
+	position: relative;
+	height: 34px;
+}
+
+#content_container #meta_label .structText1 {
+	position: absolute;
+	left: 10px;
+	top: 4px;
+}
+
+#content_container #table_structure_input {
+	overflow-y: visible;
+	border: 1px solid #c7c7c7;
+}
+
+#content_container #table_settings_container {
+	overflow-y: visible;
+}
+
+#content_container .referenceTableRB.with-gap:checked+label:before {
+	border-color: #4CAF50 !important;
+}
+
+#content_container .referenceTableRB:not(:checked)+label:before {
+	border-color: #4CAF50 !important;
+}
+
+#content_container .referenceTableRB.with-gap:checked+label:after {
+	border-color: #4CAF50 !important;
+	background-color: #4CAF50 !important;
+}
+
+#content_container .referenceTableRB:not(:checked)+label:after {
+	border-color: #4CAF50 !important;
+}
+
+#content_container .matchupTableRB.with-gap:checked+label:before {
+	border-color: #2196F3 !important;
+}
+
+#content_container .matchupTableRB:not(:checked)+label:before {
+	border-color: #2196F3 !important;
+}
+
+#content_container .matchupTableRB.with-gap:checked+label:after {
+	border-color: #2196F3 !important;
+	background-color: #2196F3 !important;
+}
+
+#content_container .matchupTableRB:not(:checked)+label:after {
+	border-color: #2196F3 !important;
+}
+
+#content_container #table_structure_input .columnRow {
+	margin-bottom: 0px !important;
+	padding: 4px;
+}
+
+#content_container #table_settings_container .columnRow {
+	margin-bottom: 0px !important;
+	padding: 4px;
+}
+
+#content_container .rowContainer1 {
+	background: #fff;
+}
+
+#content_container .rowContainer0 {
+	background: #f1f1f1;
+}
+
+#content_container .columnSection {
+	display: inline-block;
+	width: auto;
+}
+
+#content_container #load_record_container {
+	position: relative;
+	height: 46px;
+	margin-top: -7px;
+	background: #d1d1d1;
+	border-radius: 0 0 3px 3px;
+}
+
+#content_container .structureBtn {
+	margin-top: 4px;
+}
+
+#content_container .notEditable input, #content_container .notEditable select {
+	background: #d1d1d1;
+	color: #9a9a9a;
+	border: 1px solid #9a9a9a;
+	width: 150px;
+}
+
+
+
+/*========================================
+			TABLE STRUCTURE GRID
+========================================*/
+
+#content_container #table_structure_grid {
+	height: auto;
+	width: 100%;
+	padding: 4px;
+	margin-top: 8px;
+	border: 1px dashed #fff;
+}
+
+/*==============================================================*/
+
+
+
+
+/*==============================================================
+						JQ WIDGETS
+==============================================================*/
+
+#content_container .gridOptions {
+	font-family: Helvetica, sans-serif !important;
+	font-size: 18px !important;
+	color: #2a2e30 !important;
+	background: #ddd !important;
+	border-radius: 2px !important;
+	border: 1px solid #aaa  !important;
+	padding: 3px !important;
+}
+
+#content_container .gridOptions:hover {
+	color: #8a97a0 !important;
+	cursor: pointer !important;
+}
+
+/*OVERRIDES*/
+
+#content_container .jqx-button {
+	  font-family: Helvetica, sans-serif !important;
+	  font-size: 18px !important;
+	  border: 1px solid #aaa !important;
+	  background: #ddd !important;
+	  color: #2a2e30;
+	  border-radius: 2px !important;
+}
+
+#content_container .jqx-button:hover {
+	color: #8a97a0 !important;
+	cursor: pointer;
+}
+
+#content_container #grid_add_button, #content_container #grid_cancel_button, #content_container #grid_upload_button {
+	background: none !important;
+	border: none !important;
+	width: 25px !important;
+	height: 25px !important;
+	padding: 0;
+}
+
+#content_container #grid_cancel_button {
+	margin: 2px auto;
+}

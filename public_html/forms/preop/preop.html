@@ -1,0 +1,341 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			AARON MCCOLOUGH
+	Application Name:	FARA
+	Directory:			FARA/FORMS/PREOP
+	File Name:			preop.html
+=============================================================-->
+
+<formscript id="main_css" src="../css/main.css"></formscript>
+<formscript id="materialize_css" src="../../required_files/materialize/css/materialize.min.css"></formscript>
+<formscript id="materialize_js" src="../../required_files/materialize/js/materialize.min.js"></formscript>
+<formscript id="jquery_js" src="../../required_files/scripts/jquery-2.0.2.min.js"></formscript>
+<formscript id="moment_js" src="../../required_files/scripts/moment.js"></formscript>
+<formscript id="mei_js" src="../js/extract_inject.js"></formscript>
+<formscript id="utilities_js" src="./js/utilities.js"></formscript>
+<formscript id="declarations_js" src="./js/declarations.js"></formscript>
+
+<div id="file_include_container"></div>
+
+<script>
+	function loadjscssfile(filename, filetype) {
+		if(filetype == "js") {
+			var fileref = document.createElement('script');
+			fileref.setAttribute("type","text/javascript");
+			fileref.setAttribute("src", filename);
+		}
+		else if(filetype == "css") {
+			var fileref = document.createElement("link");
+			fileref.setAttribute("rel", "stylesheet");
+			fileref.setAttribute("type", "text/css");
+			fileref.setAttribute("href", filename);
+		}
+		if(typeof fileref != "undefined") {
+			document.getElementById("file_include_container").appendChild(fileref);
+		}
+	}
+	
+	if(typeof UserData !== 'undefined') {
+		loadjscssfile("../forms/preop/js/utilities.js", "js");
+		loadjscssfile("../forms/preop/js/declarations.js", "js");
+		
+	}
+	else {
+		loadjscssfile(document.getElementById("main_css").getAttribute("src"), "css");
+		loadjscssfile(document.getElementById("materialize_css").getAttribute("src"), "css");
+		loadjscssfile(document.getElementById("materialize_js").getAttribute("src"), "js");
+		loadjscssfile(document.getElementById("jquery_js").getAttribute("src"), "js");
+		loadjscssfile(document.getElementById("moment_js").getAttribute("src"), "js");
+		
+		setTimeout(function() {
+			loadjscssfile(document.getElementById("mei_js").getAttribute("src"), "js");
+			loadjscssfile(document.getElementById("utilities_js").getAttribute("src"), "js");
+		}, 500);
+	}
+</script>
+
+<div class="container hoverable white" id="form_container">
+	<div class="row">
+		<div class="col l8 m12 s12 offset-l2 center">
+			<h4>Pre-operational Check List</h4>
+		</div>			
+	</div>
+	
+	<div class="row">
+		<div class="input-field col l4 m6 s6 offset-l2">
+			<input class="isUser formElement" type="text" id="blockD_operator_name" databaseColumn="operatorName" elementType="textbox" isSubject="true" />
+			<label class="active" for="blockD_operator_name">Operator</label>
+		</div>
+		
+		<div class="col l4 m6 s6">
+			<label>Manager</label>
+			<select id="manager_dropdown" databaseColumn="ManagerDropdown" class="browser-default formElement" elementType="select" DropDownList="Person" loadLast="true" isManager="true" populatePeople="true"></select>
+		</div>
+	</div>
+	
+	<div class="row">		
+		<div class="col l4 m6 s6 offset-l2">
+			<label>WorkType</label>
+			<select id="worktype_list" databaseColumn="WorkTypeList" elementType="select" class="browser-default formElement" VirtualTable="WorkType,work_type_name" loadLast="true"></select>
+		</div>		
+		
+		<div class="col l4 m6 s6">
+			<label>Equipment Name</label>
+			<select id="equipment_list" databaseColumn="EquipmentList" elementType="select" class="browser-default formElement" parentId="worktype_list" VirtualTable="EquipmentByWorkType,equipment_name, work_type_name" loadLast="true"></select>
+		</div>
+	</div>
+	
+	<div class="row">		
+		<div class="input-field col l4 m6 s6 offset-l2">
+			<input class="formElement" type="number" id="blockD_odometer" databaseColumn="odometerEngineHours" elementType="textbox" onkeyup="OdometerChanged();" />
+			<label class="active" for="blockD_odometer">Odometer / Engine Hours</label>
+		</div>		
+		
+		<div class="input-field col l4 m6 s6">
+			<input class="autoDate formElement" type="date" disabled id="blockD_submitted_date" databaseColumn="submittedDate" elementType="date" />
+			<label class="active" for="blockD_submitted_date">Submitted Date</label>
+		</div>
+	</div>
+	
+	<div class="row">
+		<table class="col l8 m12 s12 offset-l2 bordered striped highlight hoverable">
+			<tr>
+				<th>Item</th>
+				<th>OK</th>
+				<th>BO</th>
+				<th>NA</th>
+			</tr>
+			<tr>
+				<td>MISOM FARA</td>
+				<td><input class="with-gap formElement" type="radio" id="misom_fara_ok" name="r32" value="ok" databaseColumn="MisomFara" elementType="radiogroup" uniqueRadioId="misom_fara_ok"><label for="misom_fara_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="misom_fara_bo" name="r32" value="bo" databaseColumn="MisomFara" elementType="radiogroup" uniqueRadioId="misom_fara_bo"><label for="misom_fara_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="misom_fara_na" name="r32" value="na" databaseColumn="MisomFara" elementType="radiogroup" uniqueRadioId="misom_fara_na"><label for="misom_fara_na"></label></td>
+			</tr>
+			<tr>
+				<td>Back-Up Alarm**</td>
+				<td><input class="with-gap formElement" type="radio" id="bu_alarm_ok" name="r1"  value="ok" databaseColumn="BackUpAlarm" elementType="radiogroup" uniqueRadioId="bu_alarm_ok"><label for="bu_alarm_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="bu_alarm_bo" name="r1" value="bo" databaseColumn="BackUpAlarm" elementType="radiogroup" uniqueRadioId="bu_alarm_bo"><label for="bu_alarm_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="bu_alarm_na" name="r1" value="na" databaseColumn="BackUpAlarm" elementType="radiogroup" uniqueRadioId="bu_alarm_na"><label for="bu_alarm_na"></label></td>
+			</tr>
+			<tr>
+				<td>Seatbelt**</td>
+				<td><input class="with-gap formElement" type="radio" id="seatbelt_ok" name="r2"  value="ok" databaseColumn="Seatbelt" elementType="radiogroup" uniqueRadioId="seatbelt_ok"><label for="seatbelt_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="seatbelt_bo" name="r2" value="bo" databaseColumn="Seatbelt" elementType="radiogroup" uniqueRadioId="seatbelt_bo"><label for="seatbelt_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="seatbelt_na" name="r2" value="na" databaseColumn="Seatbelt" elementType="radiogroup" uniqueRadioId="seatbelt_na"><label for="seatbelt_na"></label></td>
+			</tr>
+			<tr>
+				<td>Horn**</td>
+				<td><input class="with-gap formElement" type="radio" id="horn_ok" name="r3"  value="ok" databaseColumn="Horn" elementType="radiogroup" uniqueRadioId="horn_ok"><label for="horn_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="horn_bo" name="r3" value="bo" databaseColumn="Horn" elementType="radiogroup" uniqueRadioId="horn_bo"><label for="horn_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="horn_na" name="r3" value="na" databaseColumn="Horn" elementType="radiogroup" uniqueRadioId="horn_na"><label for="horn_na"></label></td>
+			</tr>
+			<tr>
+				<td>Extinguishers**</td>
+				<td><input class="with-gap formElement" type="radio" id="extinguishers_ok" name="r4"  value="ok" databaseColumn="Extinguishers" elementType="radiogroup" uniqueRadioId="extinguishers_ok"><label for="extinguishers_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="extinguishers_bo" name="r4" value="bo" databaseColumn="Extinguishers" elementType="radiogroup" uniqueRadioId="extinguishers_bo"><label for="extinguishers_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="extinguishers_na" name="r4" value="na" databaseColumn="Extinguishers" elementType="radiogroup" uniqueRadioId="extinguishers_na"><label for="extinguishers_na"></label></td>
+			</tr>
+			<tr>
+				<td>Brakes-service**</td>
+				<td><input class="with-gap formElement" type="radio" id="brakes_service_ok" name="r5"  value="ok" databaseColumn="BrakesService" elementType="radiogroup" uniqueRadioId="brakes_service_ok"><label for="brakes_service_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="brakes_service_bo" name="r5" value="bo" databaseColumn="BrakesService" elementType="radiogroup" uniqueRadioId="brakes_service_bo"><label for="brakes_service_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="brakes_service_na" name="r5" value="na" databaseColumn="BrakesService" elementType="radiogroup" uniqueRadioId="brakes_service_na"><label for="brakes_service_na"></label></td>
+			</tr>
+			<tr>
+				<td>Brakes-dynamic**</td>
+				<td><input class="with-gap formElement" type="radio" id="brakes_dynamic_ok" name="r6"  value="ok" databaseColumn="BrakesDynamic" elementType="radiogroup" uniqueRadioId="brakes_dynamic_ok"><label for="brakes_dynamic_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="brakes_dynamic_bo" name="r6" value="bo" databaseColumn="BrakesDynamic" elementType="radiogroup" uniqueRadioId="brakes_dynamic_bo"><label for="brakes_dynamic_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="brakes_dynamic_na" name="r6" value="na" databaseColumn="BrakesDynamic" elementType="radiogroup" uniqueRadioId="brakes_dynamic_na"><label for="brakes_dynamic_na"></label></td>
+			</tr>
+			<tr>
+				<td>Brakes-park**</td>
+				<td><input class="with-gap formElement" type="radio" id="brakes_park_ok" name="r7"  value="ok" databaseColumn="BrakesPark" elementType="radiogroup" uniqueRadioId="brakes_park_ok"><label for="brakes_park_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="brakes_park_bo" name="r7" value="bo" databaseColumn="BrakesPark" elementType="radiogroup" uniqueRadioId="brakes_park_bo"><label for="brakes_park_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="brakes_park_na" name="r7" value="na" databaseColumn="BrakesPark" elementType="radiogroup" uniqueRadioId="brakes_park_na"><label for="brakes_park_na"></label></td>
+			</tr>
+			<tr>
+				<td>Steering-std**</td>
+				<td><input class="with-gap formElement" type="radio" id="steering_std_ok" name="r8"  value="ok" databaseColumn="SteeringStd" elementType="radiogroup" uniqueRadioId="steering_std_ok"><label for="steering_std_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="steering_std_bo" name="r8" value="bo" databaseColumn="SteeringStd" elementType="radiogroup" uniqueRadioId="steering_std_bo"><label for="steering_std_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="steering_std_na" name="r8" value="na" databaseColumn="SteeringStd" elementType="radiogroup" uniqueRadioId="steering_std_na"><label for="steering_std_na"></label></td>
+			</tr>
+			<tr>
+				<td>Steering-emerg**</td>
+				<td><input class="with-gap formElement" type="radio" id="steering_emerg_ok" name="r9"  value="ok" databaseColumn="SteeringEmerg" elementType="radiogroup" uniqueRadioId="steering_emerg_ok"><label for="steering_emerg_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="steering_emerg_bo" name="r9" value="bo" databaseColumn="SteeringEmerg" elementType="radiogroup" uniqueRadioId="steering_emerg_bo"><label for="steering_emerg_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="steering_emerg_na" name="r9" value="na" databaseColumn="SteeringEmerg" elementType="radiogroup" uniqueRadioId="steering_emerg_na"><label for="steering_emerg_na"></label></td>
+			</tr>
+			<tr>
+				<td>Fan, pulley, belt guards**</td>
+				<td><input class="with-gap formElement" type="radio" id="fan_pulley_belt_ok" name="r10"  value="ok" databaseColumn="FanPulleyBelt" elementType="radiogroup" uniqueRadioId="fan_pulley_belt_ok"><label for="fan_pulley_belt_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="fan_pulley_belt_bo" name="r10" value="bo" databaseColumn="FanPulleyBelt" elementType="radiogroup" uniqueRadioId="fan_pulley_belt_bo"><label for="fan_pulley_belt_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="fan_pulley_belt_na" name="r10" value="na" databaseColumn="FanPulleyBelt" elementType="radiogroup" uniqueRadioId="fan_pulley_belt_na"><label for="fan_pulley_belt_na"></label></td>
+			</tr>
+			<tr>
+				<td>Excessive oil/grease accumulations (fire hazard)**</td>
+				<td><input class="with-gap formElement" type="radio" id="excessive_oil_ok" name="r11"  value="ok" databaseColumn="ExcessiveOil" elementType="radiogroup" uniqueRadioId="excessive_oil_ok"><label for="excessive_oil_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="excessive_oil_bo" name="r11" value="bo" databaseColumn="ExcessiveOil" elementType="radiogroup" uniqueRadioId="excessive_oil_bo"><label for="excessive_oil_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="excessive_oil_na" name="r11" value="na" databaseColumn="ExcessiveOil" elementType="radiogroup" uniqueRadioId="excessive_oil_na"><label for="excessive_oil_na"></label></td>
+			</tr>
+			<tr>
+				<td>Glass-broken, interferes with vision, or is unsafe**</td>
+				<td><input class="with-gap formElement" type="radio" id="broken_glass_ok" name="r12"  value="ok" databaseColumn="BrokenGlass" elementType="radiogroup" uniqueRadioId="broken_glass_ok"><label for="broken_glass_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="broken_glass_bo" name="r12" value="bo" databaseColumn="BrokenGlass" elementType="radiogroup" uniqueRadioId="broken_glass_bo"><label for="broken_glass_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="broken_glass_na" name="r12" value="na" databaseColumn="BrokenGlass" elementType="radiogroup" uniqueRadioId="broken_glass_na"><label for="broken_glass_na"></label></td>
+			</tr>
+			<tr>
+				<td>Ladders/Handrails**</td>
+				<td><input class="with-gap formElement" type="radio" id="ladders_handrails_ok" name="r13"  value="ok" databaseColumn="LaddersHandrails" elementType="radiogroup" uniqueRadioId="ladders_handrails_ok"><label for="ladders_handrails_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="ladders_handrails_bo" name="r13" value="bo" databaseColumn="LaddersHandrails" elementType="radiogroup" uniqueRadioId="ladders_handrails_bo"><label for="ladders_handrails_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="ladders_handrails_na" name="r13" value="na" databaseColumn="LaddersHandrails" elementType="radiogroup" uniqueRadioId="ladders_handrails_na"><label for="ladders_handrails_na"></label></td>
+			</tr>
+			<tr>
+				<td>Tail lights day or night**</td>
+				<td><input class="with-gap formElement" type="radio" id="tail_lights_ok" name="r14"  value="ok" databaseColumn="TailLights" elementType="radiogroup" uniqueRadioId="tail_lights_ok"><label for="tail_lights_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="tail_lights_bo" name="r14" value="bo" databaseColumn="TailLights" elementType="radiogroup" uniqueRadioId="tail_lights_bo"><label for="tail_lights_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="tail_lights_na" name="r14" value="na" databaseColumn="TailLights" elementType="radiogroup" uniqueRadioId="tail_lights_na"><label for="tail_lights_na"></label></td>
+			</tr>
+			<tr>
+				<td>Head & Strobe lights after dark**</td>
+				<td><input class="with-gap formElement" type="radio" id="head_strobe_ok" name="r15"  value="ok" databaseColumn="HeadStrobe" elementType="radiogroup" uniqueRadioId="head_strobe_ok"><label for="head_strobe_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="head_strobe_bo" name="r15" value="bo" databaseColumn="HeadStrobe" elementType="radiogroup" uniqueRadioId="head_strobe_bo"><label for="head_strobe_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="head_strobe_na" name="r15" value="na" databaseColumn="HeadStrobe" elementType="radiogroup" uniqueRadioId="head_strobe_na"><label for="head_strobe_na"></label></td>
+			</tr>
+			<tr>
+				<td>Cab</td>
+				<td><input class="with-gap formElement" type="radio" id="cab_ok" name="r16"  value="ok" databaseColumn="Cab" elementType="radiogroup" uniqueRadioId="cab_ok"><label for="cab_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="cab_bo" name="r16" value="bo" databaseColumn="Cab" elementType="radiogroup" uniqueRadioId="cab_bo"><label for="cab_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="cab_na" name="r16" value="na" databaseColumn="Cab" elementType="radiogroup" uniqueRadioId="cab_na"><label for="cab_na"></label></td>
+			</tr>
+			<tr>
+				<td>Tires/Tracks</td>
+				<td><input class="with-gap formElement" type="radio" id="tires_tracks_ok" name="r17"  value="ok" databaseColumn="TiresTracks" elementType="radiogroup" uniqueRadioId="tires_tracks_ok"><label for="tires_tracks_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="tires_tracks_bo" name="r17" value="bo" databaseColumn="TiresTracks" elementType="radiogroup" uniqueRadioId="tires_tracks_bo"><label for="tires_tracks_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="tires_tracks_na" name="r17" value="na" databaseColumn="TiresTracks" elementType="radiogroup" uniqueRadioId="tires_tracks_na"><label for="tires_tracks_na"></label></td>
+			</tr>
+			<tr>
+				<td>Wipers</td>
+				<td><input class="with-gap formElement" type="radio" id="wipers_ok" name="r18"  value="ok" databaseColumn="Wipers" elementType="radiogroup" uniqueRadioId="wipers_ok"><label for="wipers_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="wipers_bo" name="r18" value="bo" databaseColumn="Wipers" elementType="radiogroup" uniqueRadioId="wipers_bo"><label for="wipers_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="wipers_na" name="r18" value="na" databaseColumn="Wipers" elementType="radiogroup" uniqueRadioId="wipers_na"><label for="wipers_na"></label></td>
+			</tr>
+			<tr>
+				<td>Heater/AC</td>
+				<td><input class="with-gap formElement" type="radio" id="heater_ac_ok" name="r19"  value="ok" databaseColumn="HeaterAC" elementType="radiogroup" uniqueRadioId="heater_ac_ok"><label for="heater_ac_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="heater_ac_bo" name="r19" value="bo" databaseColumn="HeaterAC" elementType="radiogroup" uniqueRadioId="heater_ac_bo"><label for="heater_ac_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="heater_ac_na" name="r19" value="na" databaseColumn="HeaterAC" elementType="radiogroup" uniqueRadioId="heater_ac_na"><label for="heater_ac_na"></label></td>
+			</tr>
+			<tr>
+				<td>Frame</td>
+				<td><input class="with-gap formElement" type="radio" id="frame_ok" name="r20"  value="ok" databaseColumn="Frame" elementType="radiogroup" uniqueRadioId="frame_ok"><label for="frame_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="frame_bo" name="r20" value="bo" databaseColumn="Frame" elementType="radiogroup" uniqueRadioId="frame_bo"><label for="frame_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="frame_na" name="r20" value="na" databaseColumn="Frame" elementType="radiogroup" uniqueRadioId="frame_na"><label for="frame_na"></label></td>
+			</tr>
+			<tr>
+				<td>Covers</td>
+				<td><input class="with-gap formElement" type="radio" id="covers_ok" name="r21"  value="ok" databaseColumn="Covers" elementType="radiogroup" uniqueRadioId="covers_ok"><label for="covers_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="covers_bo" name="r21" value="bo" databaseColumn="Covers" elementType="radiogroup" uniqueRadioId="covers_bo"><label for="covers_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="covers_na" name="r21" value="na" databaseColumn="Covers" elementType="radiogroup" uniqueRadioId="covers_na"><label for="covers_na"></label></td>
+			</tr>
+			<tr>
+				<td>Blade/Dipper</td>
+				<td><input class="with-gap formElement" type="radio" id="blade_dipper_ok" name="r22"  value="ok" databaseColumn="BladeDipper" elementType="radiogroup" uniqueRadioId="blade_dipper_ok"><label for="blade_dipper_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="blade_dipper_bo" name="r22" value="bo" databaseColumn="BladeDipper" elementType="radiogroup" uniqueRadioId="blade_dipper_bo"><label for="blade_dipper_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="blade_dipper_na" name="r22" value="na" databaseColumn="BladeDipper" elementType="radiogroup" uniqueRadioId="blade_dipper_na"><label for="blade_dipper_na"></label></td>
+			</tr>
+			<tr>
+				<td>Ripper</td>
+				<td><input class="with-gap formElement" type="radio" id="ripper_ok" name="r23"  value="ok" databaseColumn="Ripper" elementType="radiogroup" uniqueRadioId="ripper_ok"><label for="ripper_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="ripper_bo" name="r23" value="bo" databaseColumn="Ripper" elementType="radiogroup" uniqueRadioId="ripper_bo"><label for="ripper_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="ripper_na" name="r23" value="na" databaseColumn="Ripper" elementType="radiogroup" uniqueRadioId="ripper_na"><label for="ripper_na"></label></td>
+			</tr>
+			<tr>
+				<td>Boom/Sticks</td>
+				<td><input class="with-gap formElement" type="radio" id="boom_sticks_ok" name="r24"  value="ok" databaseColumn="BoomSticks" elementType="radiogroup" uniqueRadioId="boom_sticks_ok"><label for="boom_sticks_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="boom_sticks_bo" name="r24" value="bo" databaseColumn="BoomSticks" elementType="radiogroup" uniqueRadioId="boom_sticks_bo"><label for="boom_sticks_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="boom_sticks_na" name="r24" value="na" databaseColumn="BoomSticks" elementType="radiogroup" uniqueRadioId="boom_sticks_na"><label for="boom_sticks_na"></label></td>
+			</tr>
+			<tr>
+				<td>Hoist Line</td>
+				<td><input class="with-gap formElement" type="radio" id="hoist_line_ok" name="r25"  value="ok" databaseColumn="HoistLine" elementType="radiogroup" uniqueRadioId="hoist_line_ok"><label for="hoist_line_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="hoist_line_bo" name="r25" value="bo" databaseColumn="HoistLine" elementType="radiogroup" uniqueRadioId="hoist_line_bo"><label for="hoist_line_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="hoist_line_na" name="r25" value="na" databaseColumn="HoistLine" elementType="radiogroup" uniqueRadioId="hoist_line_na"><label for="hoist_line_na"></label></td>
+			</tr>
+			<tr>
+				<td>Power Cable</td>
+				<td><input class="with-gap formElement" type="radio" id="power_cable_ok" name="r26"  value="ok" databaseColumn="PowerCable" elementType="radiogroup" uniqueRadioId="power_cable_ok"><label for="power_cable_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="power_cable_bo" name="r26" value="bo" databaseColumn="PowerCable" elementType="radiogroup" uniqueRadioId="power_cable_bo"><label for="power_cable_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="power_cable_na" name="r26" value="na" databaseColumn="PowerCable" elementType="radiogroup" uniqueRadioId="power_cable_na"><label for="power_cable_na"></label></td>
+			</tr>
+			<tr>
+				<td>Operator Seat</td>
+				<td><input class="with-gap formElement" type="radio" id="operator_seat_ok" name="r27"  value="ok" databaseColumn="OperatorSeat" elementType="radiogroup" uniqueRadioId="operator_seat_ok"><label for="operator_seat_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="operator_seat_bo" name="r27" value="bo" databaseColumn="OperatorSeat" elementType="radiogroup" uniqueRadioId="operator_seat_bo"><label for="operator_seat_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="operator_seat_na" name="r27" value="na" databaseColumn="OperatorSeat" elementType="radiogroup" uniqueRadioId="operator_seat_na"><label for="operator_seat_na"></label></td>
+			</tr>
+			<tr>
+				<td>Gauges</td>
+				<td><input class="with-gap formElement" type="radio" id="gauges_ok" name="r28"  value="ok" databaseColumn="Gauges" elementType="radiogroup" uniqueRadioId="gauges_ok"><label for="gauges_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="gauges_bo" name="r28" value="bo" databaseColumn="Gauges" elementType="radiogroup" uniqueRadioId="gauges_bo"><label for="gauges_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="gauges_na" name="r28" value="na" databaseColumn="Gauges" elementType="radiogroup" uniqueRadioId="gauges_na"><label for="gauges_na"></label></td>
+			</tr>
+			<tr>
+				<td>Mirrors</td>
+				<td><input class="with-gap formElement" type="radio" id="mirrors_ok" name="r29"  value="ok" databaseColumn="Mirros" elementType="radiogroup" uniqueRadioId="mirrors_ok"><label for="mirrors_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="mirrors_bo" name="r29" value="bo" databaseColumn="Mirros" elementType="radiogroup" uniqueRadioId="mirrors_bo"><label for="mirrors_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="mirrors_na" name="r29" value="na" databaseColumn="Mirros" elementType="radiogroup" uniqueRadioId="mirrors_na"><label for="mirrors_na"></label></td>
+			</tr>
+			<tr>
+				<td>Walkway</td>
+				<td><input class="with-gap formElement" type="radio" id="walkway_ok" name="r30"  value="ok" databaseColumn="Walkway" elementType="radiogroup" uniqueRadioId="walkway_ok"><label for="walkway_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="walkway_bo" name="r30" value="bo" databaseColumn="Walkway" elementType="radiogroup" uniqueRadioId="walkway_bo"><label for="walkway_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="walkway_na" name="r30" value="na" databaseColumn="Walkway" elementType="radiogroup" uniqueRadioId="walkway_na"><label for="walkway_na"></label></td>
+			</tr>
+			<tr>
+				<td>Other</td>
+				<td><input class="with-gap formElement" type="radio" id="other_ok" name="r31"  value="ok" databaseColumn="Other" elementType="radiogroup" uniqueRadioId="other_ok"><label for="other_ok"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="other_bo" name="r31" value="bo" databaseColumn="Other" elementType="radiogroup" uniqueRadioId="other_bo"><label for="other_bo"></label></td>
+				<td><input class="with-gap formElement" type="radio" id="other_na" name="r31" value="na" databaseColumn="Other" elementType="radiogroup" uniqueRadioId="other_na"><label for="other_na"></label></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="row">
+		<div class="col l8 m12 s12 offset-l2">
+			<div>** CRITICAL SAFETY ITEM</div>
+			<div>DO NOT OPERATE IF B/O, NOTIFY SUPERVISOR</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="input-field col l8 m12 s12 offset-l2">
+		<textarea class="materialize-textarea formElement" id="boDetails" name="boDetails" databaseColumn="boDetails" elementType="textarea"></textarea>		
+		<label class="active" for="boDetails">Details on B/O Items</label>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col l8 m12 s12 offset-l2">
+			<div onclick="callSignature('MainSigBox')" style="font-style:italic" type="signature" picWidth="250" picHeight="55" databaseColumn="MainSigBox" class="signatureBox formElement">Signatures need to be completed from an iOS device.</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col l8 m12 s12 offset-l2">
+			<div id="picture_container"></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col l8 m12 s12 offset-l2">	
+			<div id="geo_location_container">
+				<table>
+					<tr>
+						<td clearOnReset="true" id="geoLabelCell"></td>
+						<td clearOnReset="true" id="geoSpanCell"><span id="geo_location" databaseColumn="geoLocation" elementType="span" executeFunction="UpdateGeoLocation"></span></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

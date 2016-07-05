@@ -1,0 +1,78 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			AARON MCCOLOUGH
+	Application Name:	FARA
+	Directory:			FARA/DBA/STRUCT
+	File Name:			struct.html
+=============================================================-->
+
+<!-- PAGE STYLES -->
+<link href="../dba/struct/css/styles.css" rel="stylesheet"/>
+
+<!-- PAGE SCRIPTS -->
+<script type="text/javascript" src="../dba/struct/js/get_table_data.js"></script>
+<script type="text/javascript" src="../dba/struct/js/add_structure_columns.js"></script>
+<script type="text/javascript" src="../dba/struct/js/matchuptable_jqxtree_load.js"></script>
+<script type="text/javascript" src="../dba/struct/js/matchuptable_elements_jqxgrid_load.js"></script>
+<script type="text/javascript" src="../dba/struct/js/column_structure_load.js"></script>
+<script type="text/javascript" src="../dba/struct/js/populate_control_options.js"></script>
+<script type="text/javascript" src="../dba/struct/js/toggle_screen.js"></script>
+
+<div id="content_container">
+	<div id="create_table_container">
+		<div id="create_table_form">
+			<h5 id="table_header">Form Structures</h5>
+			<h6 id="table_description">Description:</h6>
+			<div id="listbox_container">
+				<div id="form_struct_tree"></div>
+			</div>
+			<div id="add_table_input">
+				<input type="text" id="table_name_input" placeholder="Enter New Table">
+			</div>
+			
+			<div id="table_list_add_button" class="waves-effect waves-light btn green"><i class="material-icons left">add</i>Add</div>
+			<div id="table_list_remove_button" class="waves-effect waves-light btn red right"><i class="material-icons left">delete</i>Remove</div>
+	
+			<div id="table_description_modal" class="modal" style="overflow:visible">
+				<div class="modal-content">
+					<h4 id="table_description_header">Table Description</h4>
+					<h5 id="table_description_span" class="grey-text darken-3">Give your new table a description, or leave blank if not applicable.</h5>
+					<input type="text" id="table_description_input" placeholder="Enter Table Description">
+					<h5 id="table_group_span" class="grey-text darken-3">Select the table group you want to assign your new table.</h5>						
+
+					<div class="input-field col s12">
+						<select id="table_group_select"></select>
+					</div>
+					
+					<h6 id="table_cancel_span" class="grey-text darken-3">Click cancel to cancel new table creation.</h6>
+				</div>
+				<div class="modal-footer">
+					<a id="cancel_table" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="TableModalTrigger('cancel')">Cancel</a>
+					<a id="submit_table" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="TableModalTrigger('submit')">Submit</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="table_structure_container">
+		<div id="table_structure_form">
+			<h5 id="table_structure_header"></h5>
+			<h6 id="table_structure_link"></h6>
+
+			<div id="table_form_receiver"></div>
+			<br>
+			<h5 id="table_settings_header">Event Types</h5>
+
+			<div id="table_settings_receiver"></div>
+		</div>
+		<div id="table_structure_grid">
+			<div id="jqxWidget" style="font-size: 14px; font-family: Helvetica;">
+				<div id="jqxgrid"></div>
+				<div id="jqxgrid2"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

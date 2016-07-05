@@ -1,0 +1,38 @@
+/*============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			AARON MCCOLOUGH
+	Application Name:	FARA
+	Directory:			FARA/DBA/CSS
+	File Name:			tableEntry.css
+=============================================================*/
+
+#content_container #generated_form {
+	height: 100%;
+	width: 100%;
+	background: #333;
+	padding: 4px;
+}
+
+#content_container #table_record_add_button {
+	text-align: center;
+	width: 260px;
+	height: 100px;
+	font-size: 28px;
+	line-height: 100px;
+}
+
+#content_container input[type=text], #content_container input[type=password], #content_container input[type=email], #content_container input[type=url], #content_container input[type=time], #content_container input[type=date], #content_container input[type=datetime-local], #content_container input[type=tel], #content_container input[type=number], #content_container input[type=search], #content_container textarea.materialize-textarea {
+	font-size: 1.4rem !important;
+}
+
+#content_container .input-field label.active {
+	font-size: 1.2rem !important;
+}
+
+#content_container .input-field label {
+	font-size: 1.4rem !important;
+}
+
+#content_container label {
+	font-size: 1.2rem !important;
+}

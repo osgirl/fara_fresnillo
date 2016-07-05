@@ -1,0 +1,175 @@
+/*============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			AARON MCCOLOUGH
+	Application Name:	FARA
+	Directory:			FARA/FORMS/500023/CSS
+	File Name:			forms.css
+=============================================================*/
+
+#form_container hr {
+	display: block !important;
+	border-style: solid;
+	border-width: 1px;
+}
+
+#form_container * {
+	font-size: 12px !important;
+}
+
+#form_container .r1-e1, #form_container .r1-e2, #form_container .r1-e3 {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0px 10px;
+}
+
+#form_container .r1-e3 img {
+	width: 40px;
+	height: 40px;
+}
+
+#form_container p, #form_container h5, #form_container h6 {
+	margin: 0px;
+}
+
+#form_container .r3-e1, #form_container .r3-e2 {
+	display: inline-block;
+	width: calc(50% - 90px);
+	padding: 0px 20px;
+}
+
+#form_container .r3-e1 {
+	border-right: 2px solid #000;
+}
+
+#form_container #manager_box {
+	display: none !important;
+}
+
+#form_container .r4-e2 ul, #form_container .r4-e2 span, #form_container .r4-e2 label {
+	display: none !important;
+}
+
+#form_container .r4-e2 input {
+	border: none;
+	font-weight: bold;
+}
+
+#form_container .r5 {
+	position: relative;
+	height: 80px;
+}
+
+#form_container .r5-e2, #form_container .r5-e3, #form_container .r5-e4, #form_container .r5-e5, #form_container .r5-e6, #form_container .r5-e7 {
+	position: absolute;
+}
+
+#form_container .r5-e1 {
+	top: 0px;
+	left: 0px;
+}
+
+#form_container .r5-e2 {
+	top: 20px;
+	left: 0px;
+}
+
+#form_container .r5-e3 {
+	top: 40px;
+	left: 0px;
+}
+
+#form_container .r5-e4 {
+	top: 20px;
+	left: 200px;
+}
+
+#form_container .r5-e5 {
+	top: 40px;
+	left: 200px;
+}
+
+#form_container .r5-e6 {
+	top: 20px;
+	left: 400px;
+}
+
+#form_container .r5-e7 {
+	top: 40px;
+	left: 400px;
+}
+
+#form_container .r6-e1 table {
+	border-collapse: collapse;
+}
+
+#form_container .r6-e1 table tr, #form_container .r6-e1 table th, #form_container .r6-e1 table td {
+	border: 2px solid #000;
+}
+
+#form_container .r6-e1 table td {
+	padding: 0px 4px;
+}
+
+#form_container .r8-e1, #form_container .r8-e2, #form_container .r8-e3, #form_container .r8-e4, #form_container .r8-e5 {
+	display: inline-block;
+	width: 120px;
+}
+
+#form_container .r9-e1, #form_container .r9-e2, #form_container .r9-e3, #form_container .r9-e4 {
+	display: inline-block;
+	width: 120px;
+}
+
+#form_container .r8-e1, #form_container .r9-e1 {
+	width: 20px;
+}
+
+#form_container .r10-e1, #form_container .r10-e2 {
+	display: inline-block;
+	width: calc(50% - 90px);
+	padding: 0px 20px;
+}
+
+#form_container .r11-e2 ul, #form_container .r11-e2 span, #form_container .r11-e2 label {
+	display: none !important;
+}
+
+#form_container .r11-e2 input {
+	border: none;
+	font-weight: bold;
+}
+
+#form_container .r12-e1, #form_container .r12-e2 {
+	display: inline-block;
+	width: calc(50% - 90px);
+	padding: 0px 20px;
+}
+
+#form_container .r12-e2 {
+	border-left: 2px solid #000;
+}
+
+#form_container .r12-e1 {
+	font-weight: bold;
+}
+
+#form_container .r13-e2 {
+	font-weight: bold;
+}
+
+#form_container .r14-e1, #form_container .r14-e2 {
+	display: inline-block;
+	width: calc(50% - 90px);
+	padding: 0px 20px;
+}
+
+
+
+
+
+
+
+
+
+
+

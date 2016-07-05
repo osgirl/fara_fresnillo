@@ -1,0 +1,43 @@
+/*============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			AARON MCCOLOUGH
+	Application Name:	FARA
+	Directory:			FARA/CSS
+	File Name:			login.css
+=============================================================*/
+
+#bg_container {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: url("../images/fara_bg_04.jpg") no-repeat center center fixed;
+	background-size: cover;
+}
+
+#bgOverlay {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.4);
+	padding: 57px 20px 20px 20px;
+}
+
+#login-container {
+	position: fixed;
+	top: calc(50% - 106px);
+	left: calc(50% - 250px);
+	width: 500px;
+	padding: 25px;
+}
+
+#version {
+	color: #fff;
+	font-size: 14px;
+	position: fixed;
+	bottom: 4px;
+	right: 8px;
+	text-shadow: -1px -1px 2px #000, 1px -1px 2px #000,	-1px 1px 2px #000, 1px 1px 2px #000;
+}

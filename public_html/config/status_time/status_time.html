@@ -1,0 +1,59 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			JORGE MURILLO
+	Application Name:	FARA
+	Directory:			FARA/CONFIG/STATUS_TIME
+	File Name:			status_time.html
+=============================================================-->
+
+<!-- PAGE STYLES -->
+<link rel="stylesheet" href="../config/status_time/css/style.css">
+
+<!-- PAGE SCRIPTS -->
+<script type="text/javascript" src="../config/status_time/js/main.js"></script>
+		
+<div id="content_container">
+	<div class="container" style='margin-top: 10px;'>
+		<div class="card-panel hoverable">
+			<h5 class="center-align">Status - Type of Time</h5>
+			
+			<div class="row">
+				<div class="input-field col s12">
+					<select id="select-status">
+						<option value="" disabled selected>Choose a Status</option>
+					</select>
+					<label>Status</label>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col s12 l6">
+					<h5 class="center-align" id="stat-title"></h5>
+					<ul id="status-collection" class="collection">
+					</ul>
+				</div>
+			
+				<form class="col s12 l6" id="add-time-type">
+					<div class="row">
+						<div class="col s12">
+							<h5 class="center-align" id="add-title"></h5>
+						</div>
+						<div class="input-field col s12">
+							<select id="type_of_time" type="text" class="validate"></select>
+							<label for="type_of_time">Type of Time</label>
+						</div>
+						<div class="right" id="form-btns">
+							<a  id="btn-add-time-type" onclick="AddStatusTimeMatchup()" class="waves-effect waves-light btn orange darken-3"><i class="material-icons left">add</i>Add Type of Time</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+  <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red" onclick="LoadBottomSheet()">
+      <i class="large material-icons">grid_on</i>
+    </a>
+  </div>
+</div>
+		

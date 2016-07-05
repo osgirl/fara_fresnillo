@@ -1,0 +1,97 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			JORGE MURILLO
+	Application Name:	FARA
+	Directory:			FARA/CONFIG/USERS
+	File Name:			users.html
+=============================================================-->
+
+<!-- PAGE STYLES -->
+<link rel="stylesheet" href="../config/users/css/style.css">
+
+<!-- PAGE SCRIPTS -->
+<script type="text/javascript" src="../config/users/js/main.js"></script>
+
+<div id="content_container">
+	<div class="row" style="height:calc(100% - 20px)">
+		<div class="col s12 m10 l8 offset-m1 offset-l2" style="height:100%">
+			<div class="card-panel hoverable" style="height:calc(100% - 20px); min-height:640px;">
+				<h5 class="center-align">Manage Users</h5>
+				
+				<div class="row" style="height:calc(100% - 65px)">
+					<div class="col s12 l6" style="height:100%">
+						<h5 class="center-align" id="user-title">User List</h5>
+						<div class="input-field col s12">
+							<i class="material-icons prefix">search</i>
+							<input id="user_search" type="text" data-list="#user-collection">
+							<label for="icon_prefix">Search</label>
+						</div>
+						<ul id="user-collection" class="collection collapsible collection-box" data-collapsible="accordion" style="height:calc(100% - 120px)"></ul>
+					</div>
+				
+					<form class="col s12 l6" id="add-user">
+						<div class="row">
+							<div class="col s12">
+								<h5 class="center-align" id="add-title">Add New User</h5>
+							</div>
+							<div class="input-field col s12">
+								<input id="user_site" type="text" value="Site" disabled>
+								<label class="active" for="user_site">Site</label>
+							</div>
+							<div class="input-field col s6">
+								<select id="user_role">
+									<option value="" disabled>Choose a Role</option>
+								</select>
+								<label>Role</label>
+							</div>
+							<div class="input-field col s6">
+								<input id="personnel_id" type="text" class="validate">
+								<label for="personnel_id">PersonnelId</label>
+							</div>
+							<div class="input-field col s6">
+								<input id="first_name" type="text" class="validate">
+								<label for="first_name">First Name</label>
+							</div>
+							<div class="input-field col s6">
+								<input id="middle_name" type="text" class="validate">
+								<label for="middle_name">Middle Name</label>
+							</div>
+							<div class="input-field col s6">
+								<input id="last_name" type="text" class="validate">
+								<label for="last_name">Last Name</label>
+							</div>
+							<div class="input-field col s6">
+								<input id="display_name" type="text" class="validate">
+								<label for="display_name">Display Name</label>
+							</div>
+							<div class="input-field col s12">
+								<input id="email_txt" type="text" class="validate">
+								<label for="email_txt">Email</label>
+							</div>
+							<div class="input-field col s6">
+								<input id="username_txt" type="text" class="validate">
+								<label for="username_txt">Username</label>
+							</div>
+							<div class="input-field col s6">
+								<input id="password_txt" type="password" class="validate">
+								<label for="password_txt">Password</label>
+							</div>
+							<div class="right" id="form-btns">
+								<a id="btn-adduser" class="waves-effect waves-light btn orange darken-3"><i class="material-icons left">add</i>add user</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+  <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red" onclick="LoadBottomSheet()">
+      <i class="large material-icons">grid_on</i>
+    </a>
+  </div>
+</div>
+
+
+
+

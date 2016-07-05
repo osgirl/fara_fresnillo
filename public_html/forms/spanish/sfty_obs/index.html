@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Observaciones de Seguridad</title>
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+<link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet"/>
+<link href="css/main.css" rel="stylesheet"/>
+<link href="css/forms.css" rel="stylesheet"/>
+<link href="css/altTheme.css" rel="stylesheet"/>
+<link href="css/jqueryui.css" rel="stylesheet"/>
+<script type="text/javascript">
+var rootURL = "http://192.168.1.91:8888/";
+</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
+<script type="text/javascript" src="js/utilities.js"></script>
+<script type="text/javascript" src="js/extract_inject.js"></script>
+<script type="text/javascript" src="js/atRisk_comments.js"></script>
+</head>
+<body>
+	<div id="form_container">
+
+			<div id="blockA">
+				<h2>Observacion de Seguridad</h2>
+				<div id="stop_image"></div>
+			</div>
+
+			<div id="blockB">
+				<div>
+					<label for="form_id">Folio de auditoria:</label>
+					<input type="text" id="form_id" name="Observer" avoid="true">
+				
+					<label for="date">Fecha:</label>
+					<input type="date" id="shiftDate" name="shiftDate">
+				</div>
+				<div>									
+					<label for="observer">Nombre del auditor:</label>
+					<input type="text" id="Observer" name="CompletedByName">
+					
+					<label for="shift_select">Turno:</label>
+					<select id="ShiftType" name="ShiftType">
+						<option>-- Seleccione --</option>
+					</select> 
+				</div>
+				<div>									
+					<label for="activites">Actividades realizadas:</label>
+					<input type="text" id="activites" name="Activities">
+					
+					<label for="area_select">Area/lugar:</label>
+					<select id="Area" name="Area">
+						<option>-- Seleccione --</option>
+					</select>
+				</div>
+				
+				<label for="num_people">N&uacute;mero de personas:</label>
+				<input type="number" id="num_people" name="NoofPeople">
+				
+			</div>
+
+			<div id="blockC">
+				<div class="blockHeader">Tipo de Trabajo Observado</div>
+				<textarea id="TasksObserved" name="TasksObserved"></textarea>
+			</div>
+			
+			<div id="blockK">
+				<div class="blockHeader">Reacciones de las Personas<span>Inseguros</span><span>Seguros</span></div>
+				<div id="kGroupCont" class="inputGroup">
+					<div>
+						<label>Ajustan o agregan algo a su EPP</label>
+						<input class="atriskBox" type="radio" name="k1" id="AdjPPE_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="k1" id="AdjPPE_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Cambian de posici&oacute;n subitamente</label>
+						<input class="atriskBox" type="radio" name="k2" id="AbrPos_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="k2" id="AbrPos_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Reacomodan su trabajo</label>
+						<input class="atriskBox" type="radio" name="k3" id="ReacWk_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="k3" id="ReacWk_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Dejan de trabajar o se alejan del lugar</label>
+						<input class="atriskBox" type="radio" name="k4" id="StopWk_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="k4" id="StopWk_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Colocan Tierras</label>
+						<input class="atriskBox" type="radio" name="k5" id="PlaceDrt_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="k5" id="PlaceDrt_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Colocan bloqueos</label>
+						<input class="atriskBox" type="radio" name="k6" id="PlaceBlk_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="k6" id="PlaceBlk_SafeYes" avoidAtDBPost="true">
+					</div>										
+				</div>
+			</div>
+
+			<div id="blockD">
+				<div class="blockHeader">Equipo de Protecci&oacuten Personal<span>Inseguros</span><span>Seguros</span></div>
+				<div id="dGroupCont" class="inputGroup">
+					<div>
+						<label>Cabeza</label>
+						<input class="atriskBox" type="radio" name="d1" id="Head_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="d1" id="Head_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Ojos y Cara</label>
+						<input class="atriskBox" type="radio" name="d2" id="EyesFace_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="d2" id="EyesFace_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>O&iacute;dos</label>
+						<input class="atriskBox" type="radio" name="d3" id="Ears_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="d3" id="Ears_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Aparato respiratorio</label>
+						<input class="atriskBox" type="radio" name="d4" id="BreathEquip_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="d4" id="BreathEquip_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Brazos y Manos</label>
+						<input class="atriskBox" type="radio" name="d5" id="ArmsHands_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="d5" id="ArmsHandsSafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Tronco</label>
+						<input class="atriskBox" type="radio" name="d6" id="Body_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="d6" id="Body_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Piernas o Pies</label>
+						<input class="atriskBox" type="radio" name="d7" id="LegsFeet_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="d7" id="LegsFeetSafeYes" avoidAtDBPost="true">
+					</div>
+				</div>
+			</div>								
+
+			<div id="blockF">
+				<div class="blockHeader">Posiciones de las Personas<span>Inseguros</span><span>Seguros</span></div>
+				<div id="fGroupCont" class="inputGroup">
+					<div>
+						<label>Golpear contra objectos</label>
+						<input class="atriskBox" type="radio" name="f1" id="StruckBy_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="f1" id="StruckBy_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Quedar atrapado sobre, entre o dentro de objetos</label>
+						<input class="atriskBox" type="radio" name="f2" id="Entrap_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="f2" id="Entrap_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Ca&iacute;das</label>
+						<input class="atriskBox" type="radio" name="f3" id="Fall_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="f3" id="Fall_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Contacto con Temperaturas Extremas</label>
+						<input class="atriskBox" type="radio" name="f4" id="HighTemp_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="f4" id="HighTemp_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Contacto con corriente electica</label>
+						<input class="atriskBox" type="radio" name="f5" id="ElecCont_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="f5" id="ElecCont_Safe" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Inhalaci&oacute;n</label>
+						<input class="atriskBox" type="radio" name="f6" id="Inhalat_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="f6" id="Inhalat_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Absorci&oacute;n</label>
+						<input class="atriskBox" type="radio" name="f7" id="Absorb_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="f7" id="Absorb_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Ingesti&oacute;n</label>
+						<input class="atriskBox" type="radio" name="f8" id="Ingest_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="f8" id="Ingest_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Sobre-esfuerzo</label>
+						<input class="atriskBox" type="radio" name="f9" id="OverEffort_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="f9" id="OverEffort_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Movimientos repetitivos</label>
+						<input class="atriskBox" type="radio" name="f10" id="RepetitiveMov_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="f10" id="RepetitiveMov_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Posiciones incomodas y posturas est&aacute;ticas</label>
+						<input class="atriskBox" type="radio" name="f11" id="UncomfPos_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="f11" id="UncomfPos_SafeYes" avoidAtDBPost="true">
+					</div>
+				</div>
+			</div>
+			
+			<div id="blockE">
+				<div class="blockHeader">Herramienta Y Equipo<span>Inseguros</span><span>Seguros</span></div>
+				<div id="eGroupCont" class="inputGroup">
+					<div>
+						<label>Empleo de Herr. y Equipo inadecuados para el trabajo.</label>
+						<input class="atriskBox" type="radio" name="e1" id="InadqToolsEqu_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="e1" id="InadqToolsEqu_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Empleo en forma incorrecta de Herr. y Equipo.</label>
+						<input class="atriskBox" type="radio" name="e2" id="IncorrectUseTools_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="e2" id="IncorrectUseTools_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Empleo de Herr y Equipo que est&eacute;n en condiciones inseguras.</label>
+						<input class="atriskBox" type="radio" name="e3" id="UseGoodCondTools_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="e3" id="UseGoodCondTools_SafeYes" avoidAtDBPost="true">
+					</div>
+				</div>
+			</div>
+
+			<div id="blockG">
+				<div class="blockHeader">Procedimientos<span>Inseguros</span><span>Seguros</span></div>
+				<div id="gGroupCont" class="inputGroup">
+					<div>
+						<label>Inadecuados para el trabajo</label>
+						<input class="atriskBox" type="radio" name="g1" id="InadqProcForJob_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="g1" id="InadqProcForJob_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Desconocidos ni entendidos por todos los interesados</label>
+						<input class="atriskBox" type="radio" name="g2" id="NotKnownProcByParties_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="g2" id="NotKnownProcByParties_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Se conocen y se entienden pero no se cumplen</label>
+						<input class="atriskBox" type="radio" name="g3" id="KnownProcYetUnf_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="g3" id="KnownProcYetUnf_SafeYes" avoidAtDBPost="true">
+					</div>										
+				</div>
+			</div>
+			
+			<div id="blockL">
+				<div class="blockHeader">Orden Y Limpieza<span>Inseguros</span><span>Seguros</span></div>
+				<div id="gGroupCont" class="inputGroup">
+					<div>
+						<label>Son inadecuados para el trabajo.</label>
+						<input class="atriskBox" type="radio" name="l1" id="InadqCleanForJob_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="l1" id="InadqCleanForJob_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Desconocidos ni entendidos por todos los interesados</label>
+						<input class="atriskBox" type="radio" name="l2" id="NotKnownCleanByParties_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="l2" id="NotKnownCleanByParties_SafeYes" avoidAtDBPost="true">
+					</div>
+					<div>
+						<label>Se conocen y se entienden pero no se cumplen</label>
+						<input class="atriskBox" type="radio" name="l3" id="KnownCleanYetUnf_Safe" executeSpecialFunction="true">
+						<input class="safeBox" type="radio" name="l3" id="KnownCleanYetUnf_SafeYes" avoidAtDBPost="true">
+					</div>										
+				</div>
+			</div>
+
+			<div id="blockI">
+				<div class="blockHeader">Actos Seguros:</div>
+				<textarea placeholder="Acciones llevadas a cabo para formentar un desempe&ntilde;o seguro continuo." id="SecureActs_Comments" name="SecureActs_Comments"></textarea>
+			</div>
+			
+			<div id="blockJ">
+				<div class="blockHeader">Actos Inseguros Observados:</div>
+				<textarea placeholder="Acci&oacute;n correctiva inmediata; Acci&oacute;n para prevenir la repetici&oacute;n." id="UnsecureActsObservd_Comments" name="UnsecureActsObservd_Comments"></textarea>
+			</div>
+
+			<div><input id="submit_button" type="submit" value="Enviar Formato"></button></div>
+
+	</div>
+					
+</html>

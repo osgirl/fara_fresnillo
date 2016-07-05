@@ -1,0 +1,76 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			JORGE MURILLO
+	Application Name:	FARA
+	Directory:			FARA/CONFIG/USERS
+	File Name:			users.html
+=============================================================-->
+
+<!-- PAGE STYLES -->
+<link rel="stylesheet" href="../sites/sites_config/css/style.css">
+
+<!-- PAGE SCRIPTS -->
+<script type="text/javascript" src="../sites/sites_config/js/get_sites_data.js"></script>
+<script type="text/javascript" src="../sites/sites_config/js/generateNewSite.js"></script>
+
+<div id="content_container">
+	<div class="row" style="height:calc(100% - 20px)">
+		<div class="col s12 m10 l8 offset-m1 offset-l2" style="height:100%">
+			<div class="card-panel hoverable" style="height:calc(100% - 20px); min-height:640px;">
+				<h5 class="center-align">Sites Configuration</h5>
+				
+				<div class="row" style="height:calc(100% - 65px)">
+					<div class="col s12 l6" style="height:100%">
+						<h5 class="center-align" id="site-title">Site List</h5>
+						<div class="input-field col s12">
+							<i class="material-icons prefix">search</i>
+							<input id="site_search" type="text" data-list="#site-collection">
+							<label for="icon_prefix">Search</label>
+						</div>
+						<ul id="site-collection" class="collection collapsible collection-box" data-collapsible="accordion" style="height:calc(100% - 120px)"></ul>
+					</div>
+					
+					<form class="col s12 l6" id="site-form">
+						<div class="row">
+							<div class="col s12 l12">
+								<h5 class="center-align" id="site-title">Create a Site</h5>
+							</div>
+							<div class="input-field col s12 l12">
+								<input id="site_name" type="text" value="Site">
+								<label for="site_name">Site Name</label>
+							</div>
+							<div class="input-field col s12 l12">
+								<input id="first_name" type="text" class="validate">
+								<label for="first_name">First Name</label>
+							</div>
+							<div class="input-field col s12 l12">
+								<input id="last_name" type="text" class="validate">
+								<label for="last_name">Last Name</label>
+							</div>
+							<div class="input-field col s12 l12">
+								<input id="email" type="text" class="validate">
+								<label for="email">Email</label>
+							</div>
+							<div class="input-field col s12">
+								<select id="select-site">
+									<option value="" disabled selected>Choose a Site</option>
+								</select>
+								<label>Duplicate records from</label>
+							</div>
+							<div class="col s12 l12">
+								<p>Once a new site has been created, a Super Admin user account will be created using the provided email as the user name.  A temporary password will be generated and sent to the email.</p>
+							</div>
+							<div class="right" id="form-btns">
+								<a onclick="NewSiteValidation()" class="waves-effect waves-light btn orange darken-3"><i class="material-icons left">add</i>Add Site</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+

@@ -1,0 +1,157 @@
+<div id="file_include_container"></div>
+
+<script>
+	function loadjscssfile(filename, filetype) {
+		if(filetype == "js") {
+			var fileref = document.createElement('script');
+			fileref.setAttribute("type","text/javascript");
+			fileref.setAttribute("src", filename);
+		}
+		else if(filetype == "css") {
+			var fileref = document.createElement("link")
+			fileref.setAttribute("rel", "stylesheet")
+			fileref.setAttribute("type", "text/css")
+			fileref.setAttribute("href", filename)
+		}
+		if(typeof fileref != "undefined") {
+			document.getElementById("file_include_container").appendChild(fileref);
+		}
+	}
+	
+	if(typeof UserData !== 'undefined') {
+		loadjscssfile("../forms/wkpl_insp/css/forms.css", "css");
+		loadjscssfile("../forms/wkpl_insp/css/ui-lightness/jquery-ui-1.10.4.custom.css", "css");
+		loadjscssfile("../forms/wkpl_insp/css/multiselect.css", "css");
+		loadjscssfile("../forms/wkpl_insp/css/jqueryui.css", "css");
+		loadjscssfile("../forms/wkpl_insp/css/altTheme.css", "css");
+		loadjscssfile("../forms/wkpl_insp/js/declarations.js", "js");
+		loadjscssfile("../forms/wkpl_insp/js/jquery-ui-1.10.4.custom.js", "js");
+		loadjscssfile("../forms/wkpl_insp/js/multiselect.js", "js");
+		loadjscssfile("../forms/wkpl_insp/js/utilities.js", "js");
+	}
+	else {		
+		loadjscssfile("./css/forms.css", "css");
+		loadjscssfile("./css/ui-lightness/jquery-ui-1.10.4.custom.css", "css");
+		loadjscssfile("./css/multiselect.css", "css");
+		loadjscssfile("./css/jqueryui.css", "css");
+		loadjscssfile("./css/altTheme.css", "css");
+		loadjscssfile("../../required_files/scripts/jquery-2.0.2.min.js", "js");
+		loadjscssfile("../js/extract_inject.js", "js");
+		loadjscssfile("./js/jquery-ui-1.10.4.custom.js", "js");
+		loadjscssfile("./js/multiselect.js", "js");
+		loadjscssfile("./js/utilities.js", "js");
+	}
+</script>
+
+<div id="content_container">						
+	<div class="table_container">
+		<div id="form_container">
+			<div id="blockA">
+				<h1>WORK PLACE INSPECTION</h1>
+			</div>
+			
+			<br>
+			<hr>
+			<br>
+			
+			<div id="blockC">
+				<div>
+					<div id="examiner_cont">
+						<div><label>Examiners Name:</label></div>
+						<input type="text" id="exam_name" name="Examiner" databaseColumn="Examiner" elementType="textbox">
+					</div>
+					<div id="detail_cont">
+						<div><label>Shift:</label></div>
+						<select id="Shift" name="Shift" style="width:240px;" databaseColumn="Shift" elementType="textbox">
+							<option>Day</option>
+							<option>Owl</option>
+							<option>Eve</option>
+						</select>
+						<label>Date:</label>
+						<input id="exam_date" type="date" name="Date" databaseColumn="examDAte" elementType="date">
+					</div>
+				</div>
+			</div>
+			
+			<br>
+			<hr>
+			<br>
+			
+			<div id="blockB">
+				<label>Work place(s) inspected:</label>
+				<div class="inspectedRows" id="ir0">										
+					<input type="text" class="placesInsp" placeholder="1." id="WorkPlaceInspected_0" name="WorkPlaceInspected_0" databaseColumn="WorkPlaceInspected_0" elementType="textbox"></input>
+					<select multiple class="hazardSelect" value="Hazards Detected:">
+						<option id="h1">Chemicals</option>
+						<option id="h2">Combustible Storage</option>
+						<option id="h3">Conveyors / Pull Cords</option>
+						<option id="h4">Cutting / Gauges / Caps</option>
+						<option id="h5">Dials / Gauges</option>
+						<option id="h6">Electrical Cords</option>
+						<option id="h7">Electrical Installations</option>
+						<option id="h8">Environment</option>
+						<option id="h9">Exits / Egress</option>
+						<option id="h10">Extinguishers - Annual</option>
+						<option id="h11">Extinguishers - Monthly</option>
+						<option id="h12">Eye Wash / Showers</option>
+						<option id="h13">Fall Protection</option>
+						<option id="h14">First-aid Materials</option>
+						<option id="h15">Fixed / Portable Ladders</option>
+						<option id="h16">Flammable Storage</option>
+						<option id="h17">Floors / Walkways</option>
+						<option id="h18">Grinder / Guards / Rests</option>
+						<option id="h19">Ground Checks</option>
+						<option id="h20">Ground Conditions</option>
+						<option id="h21">Guards in Place</option>
+						<option id="h22">Hand Tools</option>
+						<option id="h23">Housekeeping</option>
+						<option id="h24">Labels - Legible</option>
+						<option id="h25">Lifting Gear</option>
+						<option id="h26">Lighting / Emergency</option>
+						<option id="h27">Material Handling</option>
+						<option id="h28">Missing Knock Out Plugs</option>
+						<option id="h29">Open Holes</option>
+						<option id="h30">Pipe Labeling</option>
+						<option id="h31">Handrails / Toe boards</option>
+						<option id="h32">Oxy / Acetylene Welding</option>
+						<option id="h33">Power Tools</option>
+						<option id="h34">Proper PPE</option>
+						<option id="h35">Ramps / Roads / Berms</option>
+						<option id="h36">Safety Hose Clips</option>
+						<option id="h37">Signs / Barricades</option>
+						<option id="h38">Stacking / Storage</option>
+						<option id="h39">Stairs / Stairways</option>
+						<option id="h40">Ventilation</option>
+						<option id="h41">Welding / Cables / Shield</option>
+						<option id="h42">Whip Checks</option>
+					</select>
+				</div>
+				<input type="button" id="add_row_btn" class="smallbtn" value="Add Row">
+			</div>
+			
+			<br>
+			<hr>
+			<br>							
+			
+			<div id="blockD">
+				<label>Corrective action taken if necessary:</label>
+				<div class="actionRows" id="ar0">										
+					<input type="text" class="actionTaken" placeholder="1." id="actionTaken_0" databaseColumn="CorrectiveAction_0" elementType="textbox" name="actionTaken_0"></input>
+				</div>
+				<input type="button" id="add_row_btn2" class="smallbtn" value="Add Row">
+			</div>
+			
+			<br>
+			<hr>
+			<br>
+			<div id="signature_container"></div>
+			<div id="picture_container"></div>
+
+			<div id="button_container">
+				<!--<input id="reset_button" type="button" value="Reset"></button>
+				<input id="save_button" type="submit" value="Save"></button>
+				<input id="submit_button" type="submit" value="Submit"></button>-->
+			</div>
+		</div>
+	</div>
+</div>

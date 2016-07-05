@@ -1,0 +1,53 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			JORGE MURILLO
+	Application Name:	FARA
+	Directory:			FARA/BEACONS/BEACON_GROUPS
+	File Name:			beacon_groups.html
+=============================================================-->
+		
+  <h5 class="center-align">Manage Beacon Groups</h5>
+  
+  <div class="row">
+    <div class="col s12 l6">
+      <h5 class="center-align" id="bea-title"></h5>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">search</i>
+        <input id="beacon_search" type="text" data-list="#bea-collection">
+        <label for="icon_prefix">Search</label>
+      </div>
+      <ul id="bea-collection" class="collection collection-box">
+      </ul>
+    </div>
+  
+    <form class="col s12 l6" id="add-beacongroup">
+      <div class="row">
+        <div class="col s12">
+          <h5 class="center-align" id="add-title">Add New Beacon Group</h5>
+        </div>
+        <div class="input-field col s12">
+          <input id="group_uuid" type="text">
+          <label for="group_uuid" class="active">Group UUID</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="group_name" type="text" class="validate">
+          <label for="group_name">Group Name</label>
+        </div>
+        <div class="input-field col s12">
+          <select id="rel_table">
+            <option value="" disabled>Choose a Table</option>
+          </select>
+          <label>Relationship Table</label>
+        </div>
+        <div class="input-field col s12">
+          <select id="display_col">
+            <option value="" disabled>Choose a Column</option>
+          </select>
+          <label>Relationship Column</label>
+        </div>
+        <div class="right" id="form-btns">
+          <a id="btn-addbeacongroup" class="waves-effect waves-light btn orange darken-3"><i class="material-icons left">add</i>add beacon group</a>
+        </div>
+      </div>
+    </form>
+  </div>

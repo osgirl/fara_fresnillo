@@ -1,0 +1,121 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			ZACHARY CARTER
+	Application Name:	FARA
+	Directory:			FARA/SCHEDULER
+	File Name:			scheduler.html
+=============================================================-->
+
+<!-- PAGE SCRIPTS -->
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.9','packages':['timeline']}]}"></script>
+<script type="text/javascript" src="../scheduler/js/scheduler.js"></script>
+
+<div id="content_container">
+	<div class="container" style="padding:10px 0px;">
+
+		<table style="font-size:1.3rem" class="hoverable white striped highlight bordered" id="scheduleTable">
+		
+			<thead>
+				<tr class="blue-grey darken-2 white-text">
+					<th>Create Pattern</th>
+					<th style="text-align:center"><a href="#" onclick="generatePattern()" class="generatePattern blue-grey lighten-3 black-text waves-effect waves-light btn"><i class="material-icons right">create</i>Create Pattern</a></th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr class="blue-grey darken-2 white-text">
+					<td colspan="2"></td>
+					<!--<th style="text-align:center"><a href="#" onclick="generatePattern()" class="generatePattern blue-grey lighten-3 black-text waves-effect waves-light btn"><i class="material-icons right">create</i>Create Pattern</a></th>-->
+				</tr>
+			</tfoot>
+			
+			<tr>
+				<td>Pattern Category</td>
+				<td>
+					<div class="input-field col s12">
+						<select id="category"></select>
+						<label for="category">Pattern Category</label>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Pattern</td>
+				<td>
+					<p>
+						<input type="radio" id="createNewPattern" name="patternType" value="new">
+						<label for="createNewPattern">Create New</label>
+					</p>
+					<p>
+						<input id="appendExistingPattern" type="radio" name="patternType" value="existing">
+						<label for="appendExistingPattern">Append Existing</label>
+					</p>
+				</td>
+			</tr>
+			<tr style="display:none" id="namePattern">
+				<td>Name New Pattern:</td>
+				<td>
+					<div class="input-field col s12">
+						<input type="text" id="patternName">
+						<label for="patternName">Pattern Name</label>
+					</div>
+				</td>
+			</tr>
+			<tr style="display:none" id="existingPattern">
+				<td>Select Existing Pattern:</td>
+				<td>
+					<div class="input-field col s12">
+						<select id="selectExisting"></select>
+						<label for="selectExisting">Existing Pattern</label>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Start Pattern Date</td>
+				<td><div id="dateInputStart"></div></td>
+			</tr>
+			<tr>
+				<td>Start Time</td>
+				<td><div id="timeInput"></div></td>
+			</tr>
+			<tr>
+				<td>End Pattern Date</td>
+				<td><div id="dateInputEnd"></div></td>
+			</tr>
+			<tr>
+				<td>Hours:</td>
+				<td><div id="hours"></div></td>
+			</tr>
+			<tr>
+				<td>Days On</td>
+				<td><div id="daysOn"></div></td>
+			</tr>
+			<tr>
+				<td>Days Off</td>
+				<td><div id="daysOff"></div></td>
+			</tr>
+			<tr style="display:none">
+				<td colspan="2">
+					<div id="misomTimeline" style="display:none"></div>
+				</td>
+			</tr>
+			<tr style="display:none" id="showFilter">
+				<td colspan="2">
+					<table id="region_list" class="transparent">
+						<tr>
+							<td>Filter Timeline From:</td>
+							<td><div id="widgetInputStart"></div></td>
+							<td>To:</td>
+							<td><div id="widgetInputEnd" style="float:left"></div></td>
+							<td><a href="#" onclick="adjustChart()" class="blue-grey darken-2 white-text waves-effect waves-light btn"><i class="material-icons right">refresh</i>Change</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr style="display:none">
+				<td colspan="2"><h5 style="text-align:center;" id="step2">Step 2: Confirm Pattern Data</h5><div id="schedule"></div></td>
+			</tr>
+		</table>
+	
+	</div>
+</div>
+
+

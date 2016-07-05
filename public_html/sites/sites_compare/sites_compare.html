@@ -1,0 +1,61 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			JORGE MURILLO
+	Application Name:	FARA
+	Directory:			FARA/CONFIG/USERS
+	File Name:			users.html
+=============================================================-->
+
+<!-- PAGE STYLES -->
+<link rel="stylesheet" href="../sites/sites_compare/css/style.css">
+
+<!-- PAGE SCRIPTS -->
+<script type="text/javascript" src="../sites/sites_compare/js/get_sites_data.js"></script>
+<script type="text/javascript" src="../sites/sites_compare/js/main.js"></script>
+<script type="text/javascript" src="../sites/sites_compare/js/uploadSite.js"></script>
+<script type="text/javascript" src="../sites/sites_compare/js/generateSite.js"></script>
+
+<div id="content_container">
+	<div class="row" style="height:calc(100% - 20px)">
+		<div class="col s12 m10 l8 offset-m1 offset-l2" style="height:100%">
+			<div class="card-panel hoverable" style="height:calc(100% - 5px); min-height:640px;">
+				<h5 class="center-align">Compare Sites</h5>				
+				<div class="row" style="height:calc(100% - 65px)">
+					<div class="col s12 l6" style="height:100%">
+						<h5 class="center-align" id="site-from-title">From Site</h5>
+						<div class="input-field col s12">
+							<select id="select-from-site">
+								<option value="" disabled selected>Choose a Site</option>
+							</select>
+							<label>Copy from Site:</label>
+						</div>
+						<ul id="fromsite-collection" class="collection collapsible collection-box" data-collapsible="accordion" style="height:calc(100% - 150px)"></ul>
+					</div>					
+					<div class="col s12 l6" style="height:100%">
+						<h5 class="center-align" id="site-to-title">To Site</h5>
+						<div class="input-field col s12">
+							<select id="select-to-site">
+								<option value="" disabled selected>Choose a Site</option>
+							</select>
+							<label>Copy to Site:</label>
+						</div>
+						<ul id="tosite-collection" class="collection collapsible collection-box" data-collapsible="accordion" style="height:calc(100% - 150px)"></ul>							
+					</div>
+					<div class="col s12" style="margin-top: -10px">
+						<div class="left" id="exp-btns">
+							<a onclick="CheckForComparing()" class="waves-effect waves-light btn teal darken-3"><i class="material-icons left">content_copy</i>Export Site</a>
+							<a onclick="ImportSite()" class="waves-effect waves-light btn blue darken-3"><i class="material-icons left">content_copy</i>Import Site</a>
+						</div>
+						<div class="right" id="comp-btns">
+							<a onclick="compareSites()" class="waves-effect waves-light btn orange darken-3"><i class="material-icons left">compare_arrows</i>Compare</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+

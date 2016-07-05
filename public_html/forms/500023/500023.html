@@ -1,0 +1,356 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			AARON MCCOLOUGH
+	Application Name:	FARA
+	Directory:			FARA/FARA/FORMS/500023
+	File Name:			500023.html
+=============================================================-->
+
+<formscript id="main_css" src="../css/main.css"></formscript>
+<formscript id="materialize_css" src="../../required_files/materialize/css/materialize.min.css"></formscript>
+<formscript id="materialize_js" src="../../required_files/materialize/js/materialize.min.js"></formscript>
+<formscript id="jquery_js" src="../../required_files/scripts/jquery-2.0.2.min.js"></formscript>
+<formscript id="moment_js" src="../../required_files/scripts/moment.js"></formscript>
+<formscript id="mei_js" src="../js/extract_inject.js"></formscript>
+<formscript id="utilities_js" src="./js/utilities.js"></formscript>
+<formscript id="declarations_js" src="./js/declarations.js"></formscript>
+
+<div id="file_include_container"></div>
+
+<script>
+	function loadjscssfile(filename, filetype) {
+		if(filetype == "js") {
+			var fileref = document.createElement('script');
+			fileref.setAttribute("type","text/javascript");
+			fileref.setAttribute("src", filename);
+		}
+		else if(filetype == "css") {
+			var fileref = document.createElement("link");
+			fileref.setAttribute("rel", "stylesheet");
+			fileref.setAttribute("type", "text/css");
+			fileref.setAttribute("href", filename);
+		}
+		if(typeof fileref != "undefined") {
+			document.getElementById("file_include_container").appendChild(fileref);
+		}
+	}
+	
+	if(typeof UserData !== 'undefined') {
+		loadjscssfile("../forms/500023/js/utilities.js", "js");
+		loadjscssfile("../forms/500023/js/declarations.js", "js");
+		
+	}
+	else {
+		loadjscssfile(document.getElementById("main_css").getAttribute("src"), "css");
+		loadjscssfile(document.getElementById("materialize_css").getAttribute("src"), "css");
+		loadjscssfile(document.getElementById("materialize_js").getAttribute("src"), "js");
+		loadjscssfile(document.getElementById("jquery_js").getAttribute("src"), "js");
+		loadjscssfile(document.getElementById("moment_js").getAttribute("src"), "js");
+		
+		setTimeout(function() {
+			loadjscssfile(document.getElementById("mei_js").getAttribute("src"), "js");
+			loadjscssfile(document.getElementById("utilities_js").getAttribute("src"), "js");
+		}, 500);
+	}
+</script>
+
+<div class="container hoverable white" id="form_container">
+			
+	<div class="row r1">
+		<div class="r1-e1 col l5 m6 s6 offset-l2 center">
+			<h5>CERTIFICATE OF TRAINING</h5>
+		</div>
+		
+		<div class="r1-e2 col l3 m4 s4">
+			<div class="row">
+				<div class="col right">
+					<h6>U.S. Department of Labor</h6>
+				</div>
+				<div class="col right">
+					<h6>Mine Safety and Health Administration</h6>
+				</div>
+			</div>
+		</div>
+		
+		<div class="r1-e3 col l1 m1 s1 left">
+			<div class="500023seal desktop" style="width:60px; height:60px; background:url(../forms/images/usdl_logo.jpg); background-size:contain;"></div>
+			<div class="500023seal ios" style="display: none; width:100px; height:100px; background:url(../images/usdl_logo.jpg); background-size:contain;"></div>
+		</div>
+	</div>
+	
+	<hr style="display:none">
+	
+	<div class="row r2">
+		<div class="r2-e1 col l8 m12 s12 offset-l2">
+			<h5>Approved OMB Number 1219-0009, Expires August 31, 2018.</h5>
+			<hr style="display:none">
+			<p>This certificate is required under Public Law 91-173 as amended by Public Law 95-164.  Failure to comply may result in penalties and other sanctions as provided by sections 108 and 110, Public Law 91-173 as amended by Public Law 95-164.</p>
+		</div>
+	</div>
+	
+	<hr style="display:none">
+	
+	<div class="row r3">
+		<div class="r3-e1 col l8 m12 s12 offset-l2">
+			<p>Issue Certificate Immediately Upon Completion of Training</p>
+		</div>
+		
+		<div class="r3-e2 input-field col l8 m12 s12 offset-l2">
+			<input class="formElement" type="text" id="serial_number" name="serialNumber" placeholder="Serial Number" databaseColumn="SerialNumber" elementType="textbox">
+			<label class="active" for="serialNumber">Serial Number (for operator's use)</label>					
+		</div>
+	</div>
+	
+	<hr style="display:none">
+	
+	<input class="isUser formElement dontPrint" style="display:none" id="manager_box" type="text" databaseColumn="managerName" elementType="textbox" isManager="true">
+	
+	<div class="row r4">
+		<div class="r4-e1 col l8 m12 s12 offset-l2">
+			<p>1. Select the Person Being Trained</p>
+		</div>
+		<div class="r4-e2 col l8 m12 s12 offset-l2">			
+			<label id="fn_label">Trainee</label>
+			<select id="trainee_dropdown" databaseColumn="TraineeDropdown" elementType="select" class="browser-default formElement" DropDownList="Person" populatePeople="true" isSubject="true" loadLast="true"></select>
+		</div>
+	</div>
+	
+	<div class="row r5">
+		<div class="r5-e1 col l8 m12 s12 offset-l2">
+			<p>2. Check Type of Approved Training Received</p>
+		</div>
+		
+		<div class="r5-e2 col l4 m6 s6 offset-l2">
+			<input id="Cx1" type="checkbox" class="training_type formElement" name="trainingType" value="1" databaseColumn="TrainingTypeCx1" elementType="checkbox"></td>
+			<label for="Cx1">Annual Refresher</label>
+		</div>
+		<div class="r5-e3 col l4 m6 s6">
+			<input id="Cx4" type="checkbox" class="training_type formElement" name="trainingType" value="4" databaseColumn="TrainingTypeCx4" elementType="checkbox"></td>
+			<label for="Cx4">New Task (specify below)</label>
+		</div>
+		<div class="r5-e4 col l4 m6 s6 offset-l2">
+			<input id="Cx2" type="checkbox" class="training_type formElement" name="trainingType" value="2" databaseColumn="TrainingTypeCx2" elementType="checkbox"></td>
+			<label for="Cx2">Experienced Miner</label>
+		</div>
+		<div class="r5-e5 col l4 m6 s6">
+			<input id="Cx5" type="checkbox" class="training_type formElement" name="trainingType" value="5" databaseColumn="TrainingTypeCx5" elementType="checkbox"></td>
+			<label for="Cx5">New Miner</label>
+		</div>
+		<div class="r5-e6 col l4 m6 s6 offset-l2">
+			<input id="Cx3" type="checkbox" class="training_type formElement" name="trainingType" value="3" databaseColumn="TrainingTypeCx3" elementType="checkbox"></td>
+			<label for="Cx3">Hazard Training</label>
+		</div>
+		<div class="r5-e7 col l4 m6 s6">
+			<input id="Cx6" type="checkbox" class="training_type formElement" name="trainingType" value="6" databaseColumn="TrainingTypeCx6" elementType="checkbox"></td>
+			<label for="Cx6">Other (Specify)</label>
+		</div>
+	</div>
+	
+	<div class="row r6">
+		<div class="r6-e1 col l8 m10 s10 offset-l2">
+			<table id="training_table">
+				<tr id="head_row">
+					<th>Date</th>
+					<th>Task</th>
+					<th colspan=2>Initials</th>
+				</tr>
+				<tr id="row_0">
+					<td><input type="date" class="formElement" id="d_Tdate_0" databaseColumn="TrainingDate0" elementType="date"></td>
+					<td><input type="text" class="formElement" id="d_Ttask_0" databaseColumn="TrainingTask0" elementType="textbox"></td>
+					<td class="initialsCont formElement formImage dontHide"><div onclick="callInitials('TrainingInitials0a')" style="font-style:italic" type="initials" class="DTint0a initialsBox" id="d_Tint_0a" picHeight="31" picWidth="58" databaseColumn="TrainingInitials0a" initialsTrigger="true"></div></td>
+					<td class="initialsCont formElement formImage dontHide"><div onclick="callInitials('TrainingInitials0b')" style="font-style:italic" type="initials" class="DTint0b initialsBox" id="d_Tint_0b" picHeight="31" picWidth="58" databaseColumn="TrainingInitials0b" initialsTrigger="true"></div></td>
+				</tr>
+				<tr class="hideForPrint">
+					<td>
+						<div class="btn-cont hideForPrint">
+							<div class="col l1">
+								<a onclick="AddRowToTaskList('add_row_to_task_list_btn')" id="add_row_to_task_list_btn" style="cursor:pointer" class="right">
+									<i class="normal green-text text-lighten-1 material-icons icon-visible">add_circle</i>
+									<div class="mobile-icons add-icon icon-hidden">+</div>
+								</a>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<div class="row r7">
+		<div class="r7-e1 col l8 m12 s12 offset-l2">
+			<p>3. Check Type of Operation and Related Industry</p>
+		</div>
+	</div>
+	
+	<div class="row r8">
+		<div class="r8-e1 col l1 m1 s1 offset-l2">A.</div>
+		
+		<div class="r8-e2 col l2 m2 s2">
+			<input id="Ex1" type="checkbox" class="formElement" name="operationType" value="Surface" databaseColumn="OperationTypeEx1" elementType="checkbox">
+			<label for="Ex1">Surface</label>
+		</div>
+		
+		<div class="r8-e3 col l2 m2 s2">
+			<input id="Ex2" type="checkbox" class="formElement" name="operationType" value="Construction" databaseColumn="OperationTypeEx2" elementType="checkbox">
+			<label for="Ex2">Construction</label>
+		</div>
+		
+		<div class="r8-e4 col l2 m2 s2">
+			<input id="Ex3" type="checkbox" class="formElement" name="operationType" value="Underground" databaseColumn="OperationTypeEx3" elementType="checkbox">
+			<label for="Ex3">Underground</label>
+		</div>
+		
+		<div class="r8-e5 col l2 m2 s2">
+			<input id="Ex4" type="checkbox" class="formElement" name="operationType" value="Shaft & Slope" databaseColumn="OperationTypeEx4" elementType="checkbox">
+			<label for="Ex4">Shaft & Slope</label>
+		</div>
+	</div>
+	
+	<div class="row r9">	
+		<div class="r9-e1 col l1 m1 s1 offset-l2">B.</div>
+		
+		<div class="r9-e2 col l2 m2 s2">
+			<input id="Ex5" type="checkbox" class="formElement" name="industryType" value="Coal" databaseColumn="OperationTypeEx5" elementType="checkbox">
+			<label for="Ex5">Coal</label>
+		</div>
+		
+		<div class="r9-e3 col l2 m2 s2">
+			<input id="Ex6" type="checkbox" class="formElement" name="industryType" value="Metal" databaseColumn="OperationTypeEx6" elementType="checkbox">
+			<label for="Ex6">Metal</label>
+		</div>
+		
+		<div class="r9-e4 col l2 m2 s2">
+			<input id="Ex7" type="checkbox" class="formElement" name="industryType" value="Nonmetal" databaseColumn="OperationTypeEx7" elementType="checkbox">
+			<label for="Ex7">Nonmetal</label>
+		</div>
+	</div>
+	
+	<hr style="display:none">
+	
+	<div class="row r10">
+		<div class="r10-e1">
+			<div class="col l8 m12 s12 offset-l2">
+				<p>4. Date Training Requirements Completed</p>
+			</div>
+			
+			<div class="input-field col l8 m12 s12 offset-l2">
+				<input class="formElement" type="date" id="date_training" name="dateTraining" databaseColumn="dateTraining" elementType="date">
+				<label class="active" for="date_training"></label>
+			</div>
+		</div>
+		<div class="r10-e2 input-field col l8 m12 s12 offset-l2">
+			<input class="formElement" type="checkbox" id="training_incomplete" name="trainingIncomplete" value="6" databaseColumn="TrainingIncomplete" elementType="checkbox">
+			<label for="training_incomplete">Check if not completed and go to item 5, below.</label>
+		</div>
+		<div class="r10-e3 col l8 m12 s12 offset-l2">
+			<p>&#10152; If completed, go to Item 6, below.</p>
+		</div>
+	</div>
+	
+	<hr style="display:none">
+	
+	<div class="row r11">
+		<div class="r11-e1 col l8 m12 s12 offset-l2">
+			<p>5. Click Subjects Completed (Use only for partially completed training)</p>
+		</div>
+		
+		<div class="r11-e2 col l8 m10 s10 offset-l2">
+			<label>Select Option</label>
+			<select id="F500023_subjects_dropdown_0" databaseColumn="SubjectsDropdown0" elementType="select" class="browser-default formElement" VirtualList="F500023_Subjects" loadLast="true"></select>
+		</div>
+		<div class="r11-e3 btn-cont hideForPrint">
+			<div class="col l1">
+				<a onclick="AddSubjectsRow('add_subjects_row')" id="add_subjects_row" style="cursor:pointer" class="right">
+					<i class="normal green-text text-lighten-1 material-icons icon-visible">add_circle</i>
+					<div class="mobile-icons add-icon icon-hidden">+</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+	<hr style="display:none">
+	
+	<div class="row r12">
+		<div class="r12-e1 col l4 m6 s6 offset-l2">
+			<p>6. False certification is punishable under section 110 (a) and (f) of the Federal Mine Safety & Health Act (P. L. 91-173 as amended by P. L. 95-164).</p>
+		</div>
+		<div class="r12-e2 col l4 m6 s6">
+			<div class="row">
+				<p>I certify that the above training has been completed</p>
+			</div>
+			<div class="row">
+				<p>(signature of person responsible for training)</p>
+			</div>
+			<div class="row">
+				<div onclick="callSignature('TrainingCompleteTrainerSig')" style="font-style:italic" type="signature" picWidth="250" picHeight="55" databaseColumn="TrainingCompleteTrainerSig" class="signatureBox formElement">Signatures need to be completed from an iOS device.</div>
+			</div>
+		</div>
+	</div>
+	
+	<hr style="display:none">
+	
+	<div class="row r13">
+		<div class="r13-e1 col l8 m12 s12 offset-l2">
+			<p>7. Mine Name, ID, & Location of Training (if institution, give name & address)</p>
+		</div>
+		
+		<div class="r13-e2 input-field col l8 m12 s12 offset-l2">
+			<textarea class="formElement materialize-textarea" id="mine_location" name="mineLocation" databaseColumn="MineLocation" elementType="textarea"></textarea>
+			<label id="mi_label" class="active" for="mine_location">Mine Name and Location</label>
+		</div>
+	</div>
+	
+	<hr style="display:none">
+	
+	<div class="row r14">
+		<div class="r14-e1">
+			<div class="col l8 m12 s12 offset-l2">
+				<p>8. Date</p>
+			</div>
+			
+			<div class="col l8 m12 s12 offset-l2">
+				<input class="formElement" type="date" id="current_date" name="currentDate" databaseColumn="CurrentDate" elementType="date">
+				<label for="currentDate"></label>
+			</div>
+		</div>
+		
+		<div class="r14-e2 col l8 m12 s12 offset-l2">
+			<div class="row">
+				<p>I verify that I have completed the above training</p>
+			</div>
+			<div class="row">
+				<p>(signature of person trained)</p>
+			</div>
+			<div class="row">
+				<div onclick="callSignature('TrainingCompleteTraineeSig')" style="font-style:italic" type="signature"  picWidth="250" picHeight="55" databaseColumn="TrainingCompleteTraineeSig" class="signatureBox formElement">Signatures need to be completed from an iOS device</div>
+			</div>
+		</div>
+	</div>
+	
+	<hr style="display:none">
+	
+	<div class="row r15">
+		<div class="r15-e1 col l8 m12 s12 offset-l2">
+			<h6>MSHA Form 5000-23, May, 13(revised)</h6>
+		</div>
+	</div>
+	
+	<div class="row r16">
+		<div class="r16-e1 col l8 m12 s12 offset-l2">
+			<div id="picture_container"></div>
+		</div>
+	</div>
+	
+	<div class="row r17">
+		<div class="r17-e1 col l8 m12 s12 offset-l2">
+			<div id="geo_location_container">
+				<table>
+					<tr>
+						<td clearOnReset="true" id="geoLabelCell"></td>
+						<td clearOnReset="true" id="geoSpanCell"><span id="geo_location" databaseColumn="geoLocation" elementType="span" executeFunction="UpdateGeoLocation"></span></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+/*============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			AARON MCCOLOUGH
+	Application Name:	FARA
+	Directory:			FARA/HOME/CSS
+	File Name:			main.css
+=============================================================*/
+
+#content_container #bg_container {
+	width: 100%;
+	height: 100%;
+	background: url("../../images/fara_bg_04.jpg") no-repeat center center fixed;
+	background-size: cover;
+}
+
+#content_container #bgOverlay {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.4);
+	padding: 57px 20px 20px 20px;
+}

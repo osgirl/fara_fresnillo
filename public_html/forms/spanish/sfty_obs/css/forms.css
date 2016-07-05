@@ -1,0 +1,358 @@
+
+/*======================================================
+				      GENERAL STYLES
+========================================================*/
+
+#form_container {
+	background: #fff;
+	width: 800px;
+	margin: auto;
+	padding: 30px;
+	-moz-box-shadow:  2px 5px 12px #888;
+	-webkit-box-shadow:  2px 5px 12px #888;
+	box-shadow: 2px 5px 12px #888; 
+}
+
+input, textarea, select {
+	padding: 0 2px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background: #f6f6f6;
+}
+
+select {
+	height: 30px;
+}
+
+input[type="radio"]{
+	float: right;
+	margin-left: 66px;
+	margin-right: 29px;
+}
+
+input[type="button"], input[type="submit"] {
+	color: #fff;
+	background: #5084be;
+	font-size: 18px;
+	padding: 8px;
+	border: 2px solid #366191;
+	-moz-box-shadow:  0 -4px 0 rgba(255,255,255,0.1) inset;
+	-webkit-box-shadow:  0 -4px 0 rgba(255,255,255,0.1) inset;
+	box-shadow: 0 -4px 0 rgba(255,255,255,0.1) inset;
+}
+
+.smallbtn {
+	border: 1px solid #366191 !important;
+	-moz-box-shadow:  0 -2px 0 rgba(255,255,255,0.1) inset !important;
+	-webkit-box-shadow:  0 -2px 0 rgba(255,255,255,0.1) inset !important;
+	box-shadow: 0 -2px 0 rgba(255,255,255,0.1) inset !important;
+	font-size: 14px !important;
+	padding: 3px 6px !important;
+	margin-top: 2px !important;
+	margin-right: 2px !important;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover {
+	cursor: pointer;
+	background: #70a4de;
+}
+
+.blockHeader {
+	background: #919191;
+	color: #fff;
+	font-size: 16px;
+	padding: 5px;
+}
+
+.form_block {
+	width: 100%;
+}
+
+.inputGroup {
+	padding: 4px 12px;
+}
+
+span {
+	float: right;
+	margin-left: 30px;
+	margin-right: 15px;
+}
+
+textarea {
+	width: 100%;
+	max-width: 100%;
+	height: 100px;
+	border: none;
+}
+
+
+
+/*======================================================
+				      BLOCK A
+========================================================*/
+
+#stop_image {
+	margin: 20px auto;
+	width: 345px;
+	height: 219px;
+	background: url("../images/stop.png") no-repeat center center;
+}
+
+
+
+/*========================================================*/
+
+
+
+/*======================================================
+				      BLOCK B
+========================================================*/
+
+#blockB {
+	padding: 4px;
+}
+
+#blockB div {
+	margin-bottom: 4px;
+}
+
+#blockB label {
+	font-size: 16px;
+}
+
+#blockB input {
+	padding: 4px;
+}
+
+#form_id {
+	width: 275px;
+	margin-right: 42px;
+	margin-left: 33px;
+}
+
+#observer {
+	width: 275px;
+	margin-right: 43px;
+	margin-left: 18px;
+}
+
+#subject_select {
+	width: 300px;
+	margin-left: 12px;
+	margin-right: 20px;
+}
+
+#shift_select, #date, #area_select {
+	width: 155px;
+}
+
+#activites {
+	width: 275px;
+	margin-right: 10px;
+}
+
+#num_people {
+	margin-left: 8px;
+	width: 75px;
+}
+
+
+/*========================================================*/
+
+
+
+/*======================================================
+				      BLOCK C
+========================================================*/
+
+
+
+
+/*========================================================*/
+
+
+
+/*======================================================
+				      BLOCK D
+========================================================*/
+
+
+
+#dGroupCont div {
+	display: block;
+}
+
+
+/*========================================================*/
+
+
+
+/*======================================================
+				      BLOCK E
+========================================================*/
+
+
+
+/*========================================================*/
+
+
+
+/*======================================================
+				      BLOCK F
+========================================================*/
+
+
+
+/*========================================================*/
+
+
+
+/*======================================================
+				      BLOCK G
+========================================================*/
+
+
+
+/*========================================================*/
+
+
+
+/*======================================================
+				      BLOCK H
+========================================================*/
+
+
+
+/*========================================================*/
+
+
+
+
+/*======================================================
+				      BLOCK I
+========================================================*/
+
+#blockI {
+	margin-top: -6px;
+}
+
+
+/*========================================================*/
+
+
+
+
+/*======================================================
+				      BLOCK J
+========================================================*/
+
+#blockJ {
+	margin-top: -6px;
+}
+
+/*========================================================*/
+
+
+
+
+/*======================================================
+				      BLOCK K
+========================================================*/
+
+
+#blockK {
+	margin-top: -6px;
+}
+
+
+/*========================================================*/
+
+
+
+/*======================================================
+				      FORM SECTION: FOOTER
+========================================================*/
+
+#submit_button {
+	margin-left: calc(50% - 68px);
+	margin-left: -webkit-calc(50% - 68px);
+	margin-left: -moz-calc(50% - 68px);
+}
+
+
+
+/*========================================================*/
+
+
+
+/*======================================================
+				      MEDIA QUERIES
+========================================================*/
+
+@media (max-width: 830px) {
+	.slideout-menu, #navigation {
+		display: none;
+	}
+	
+	#form_container {
+		width: 96%;
+	}
+	
+	#blockB label, #blockB input, #blockB select {
+		display: block !important;
+		width: 100% !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	
+	#blockB select {
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 599px) {
+	.blockHeader {
+		font-size: 14px;
+	}
+
+	#blockD label, #blockE label, #blockF label, #blockG label, #blockK label, #blockL label {
+		font-size: 14px;
+	}
+	
+	#blockD span, #blockE span, #blockF span, #blockG span , #blockK span, #blockL span{
+		margin-left: 15px;
+		margin-right: 0;
+	}
+	
+	#blockD input[type="radio"], #blockE input[type="radio"], #blockF input[type="radio"], #blockG input[type="radio"], #blockK input[type="radio"], #blockL input[type="radio"] {
+		margin-left: 30px;
+		margin-right: 5px;
+	}
+}
+
+@media (max-width: 500px) {
+	.blockHeader {
+		font-size: 12px;
+	}
+	
+	.inputGroup {
+		padding: 4px 0;
+	}
+	
+	#blockD span, #blockE span, #blockF span, #blockG span, #blockK span, #blockL span {
+		margin-left: 10px;
+	}
+	
+	#blockD label, #blockE label, #blockF label, #blockG label, #blockK label, #blockL label {
+		font-size: 12px;
+	}
+	
+	#form_container {
+		padding: 6px;
+	}
+	
+	#blockJ p {
+		margin-left: 0;
+		width: 100%;
+	}
+}

@@ -1,0 +1,79 @@
+/*============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			ZAC CARTER
+	Application Name:	FARA
+	Directory:			FARA/CONFIG/REGION/CSS
+	File Name:			region.css
+=============================================================*/
+
+/*========================================
+			MAIN CONTENT - STYLES
+========================================*/
+
+#content_container td, #content_container th {
+	border-radius: 0px;
+}
+
+/***************
+     Switch
+***************/
+#content_container .switch, #content_container .switch * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none; }
+
+#content_container .switch label {
+  cursor: pointer; }
+
+#content_container .switch label input[type=checkbox] {
+  opacity: 0;
+  width: 0;
+  height: 0; }
+
+#content_container .switch label input[type=checkbox]:checked + .lever {
+  background-color: #455a64 ; }
+
+#content_container .switch label input[type=checkbox]:checked + .lever:after {
+  background-color: #b0bec5 ; }
+
+#content_container .switch label .lever {
+  content: "";
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 15px;
+  background-color: #818181;
+  border-radius: 15px;
+  margin-right: 10px;
+  transition: background 0.3s ease;
+  vertical-align: middle;
+  margin: 0 16px; }
+
+#content_container .switch label .lever:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  background-color: #F1F1F1;
+  border-radius: 21px;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+  left: -5px;
+  top: -3px;
+  transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease; }
+
+#content_container input[type=checkbox]:checked:not(:disabled) ~ .lever:active:after {
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(38, 166, 154, 0.1); }
+
+#content_container input[type=checkbox]:not(:disabled) ~ .lever:active:after {
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 0, 0, 0.08); }
+
+#content_container .switch label input[type=checkbox]:checked + .lever:after {
+  left: 24px; }
+
+#content_container .switch input[type=checkbox][disabled] + .lever {
+  cursor: default; }
+
+#content_container .switch label input[type=checkbox][disabled] + .lever:after, #content_container .switch label input[type=checkbox][disabled]:checked + .lever:after {
+  background-color: #BDBDBD; }

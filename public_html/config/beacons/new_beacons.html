@@ -1,0 +1,51 @@
+<!--============================================================
+	Property of:		MISOM TECHNOLOGIES
+	Developer:			JORGE MURILLO
+	Application Name:	FARA
+	Directory:			FARA/BEACONS/BEACONS
+	File Name:			beacons.html
+=============================================================-->
+
+  <h5 class="center-align">Manage Beacons</h5>
+  
+  <div class="row">
+    <div class="col s12 l6">
+      <h5 class="center-align" id="bea-title"></h5>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">search</i>
+        <input id="beacon_search" type="text" data-list="#bea-collection">
+        <label for="icon_prefix">Search</label>
+      </div>
+      <ul id="bea-collection" class="collection collection-box">
+      </ul>
+    </div>
+  
+    <form class="col s12 l6" id="add-beacon">
+      <div class="row">
+        <div class="col s12">
+          <h5 class="center-align" id="add-title">Register Beacon</h5>
+        </div>
+        <div class="input-field col s12">
+          <select id="slct_bgroup">
+            <option value="" disabled>Choose a Beacon Group</option>
+          </select>
+          <label>Select Beacon Group</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="beacon_name" type="text" class="validate">
+          <label for="beacon_name">Beacon Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="major_val" type="text" class="validate">
+          <label for="major_val">Major</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="minor_val" type="text" class="validate">
+          <label for="minor_val">Minor</label>
+        </div>
+        <div class="right" id="form-btns">
+          <a id="btn-addbeacon" class="waves-effect waves-light btn orange darken-3"><i class="material-icons left">add</i>add beacon</a>
+        </div>
+      </div>
+    </form>
+  </div>
